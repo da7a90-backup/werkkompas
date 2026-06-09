@@ -1,0 +1,32 @@
+{
+  "name": "Werkkompas - Diensten & Beschikbaarheid",
+  "short_name": "Werkkompas",
+  "description": "Bekijk je diensten, geef je beschikbaarheid door en blijf in contact met je planner.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#002F5C",
+  "theme_color": "#002F5C",
+  "categories": ["business", "productivity"],
+  "lang": "nl-NL",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}

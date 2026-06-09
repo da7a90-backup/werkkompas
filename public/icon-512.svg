@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="96" fill="#002F5C"/>
+  <g transform="translate(256 256)">
+    <circle r="148" fill="none" stroke="#ffffff" stroke-width="10" opacity="0.18"/>
+    <circle r="108" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.28"/>
+    <polygon points="0,-150 36,0 0,150 -36,0" fill="#d7ba1d"/>
+    <polygon points="0,-150 36,0 0,0" fill="#ffffff"/>
+    <circle r="14" fill="#002F5C"/>
+    <circle r="14" fill="none" stroke="#ffffff" stroke-width="4"/>
+  </g>
+  <text x="256" y="460" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="44" fill="#ffffff" letter-spacing="-1">WERKKOMPAS</text>
+</svg>
