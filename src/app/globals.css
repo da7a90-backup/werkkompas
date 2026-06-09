@@ -23,6 +23,7 @@
 
   body {
     overscroll-behavior-y: none;
+    overflow-x: hidden;
   }
 
   /* Native-like select / button reset */

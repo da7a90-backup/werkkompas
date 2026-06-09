@@ -140,21 +140,21 @@ export default function AdminDashboardPage() {
           />
         </section>
 
-        <section className="grid gap-4 lg:gap-6 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-4 lg:space-y-6">
-            <div className="rounded-2xl border border-line bg-white overflow-hidden">
-              <div className="flex items-center justify-between gap-2 border-b border-line px-4 lg:px-5 py-3 lg:py-3.5">
+        <section className="grid grid-cols-1 gap-3 lg:gap-6 lg:grid-cols-3">
+          <div className="lg:col-span-2 space-y-3 lg:space-y-6 min-w-0">
+            <div className="rounded-xl lg:rounded-2xl border border-line bg-white overflow-hidden">
+              <div className="flex items-center justify-between gap-2 border-b border-line px-3 lg:px-5 py-2.5 lg:py-3.5">
                 <div className="min-w-0">
-                  <h3 className="font-display text-base font-black tracking-tightest text-navy-900 truncate">
+                  <h3 className="font-display text-sm lg:text-base font-black tracking-tightest text-navy-900 truncate">
                     {t("adm_upcoming")}
                   </h3>
-                  <p className="text-xs text-ink/55 truncate">
+                  <p className="hidden lg:block text-xs text-ink/55 truncate">
                     {t("adm_upcoming_desc", { n: Math.min(upcoming.length, 5) })}
                   </p>
                 </div>
                 <Link
                   href="/admin/missions"
-                  className="shrink-0 inline-flex items-center gap-1 text-xs font-bold text-navy-700 hover:underline"
+                  className="shrink-0 inline-flex items-center gap-1 text-[11px] lg:text-xs font-bold text-navy-700 hover:underline"
                 >
                   {t("adm_all")}
                   <ArrowUpRight size={12} />
@@ -170,24 +170,24 @@ export default function AdminDashboardPage() {
                     <li key={m.id}>
                       <Link
                         href={`/admin/missions/${m.id}`}
-                        className="group flex items-center gap-3 lg:gap-4 px-4 lg:px-5 py-3 lg:py-3.5 hover:bg-canvas"
+                        className="group flex items-center gap-2.5 lg:gap-4 px-3 lg:px-5 py-2.5 lg:py-3.5 hover:bg-canvas"
                       >
-                        <div className="flex h-12 w-12 shrink-0 flex-col items-center justify-center rounded-xl bg-navy-50 text-navy-700">
-                          <span className="text-[9px] font-bold uppercase tracking-widest">
+                        <div className="flex h-10 w-10 lg:h-12 lg:w-12 shrink-0 flex-col items-center justify-center rounded-lg lg:rounded-xl bg-navy-50 text-navy-700">
+                          <span className="text-[8px] lg:text-[9px] font-bold uppercase tracking-widest">
                             {fmt.monthShort(m.startISO)}
                           </span>
-                          <span className="font-display text-base font-black leading-none tabular">
+                          <span className="font-display text-sm lg:text-base font-black leading-none tabular">
                             {new Date(m.startISO).getDate()}
                           </span>
                         </div>
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2 min-w-0">
-                            <span className="min-w-0 flex-1 truncate font-bold text-navy-900">
+                            <span className="min-w-0 flex-1 truncate text-sm lg:text-base font-bold text-navy-900">
                               {m.title}
                             </span>
-                            <MissionTypeBadge type={m.type} className="shrink-0 hidden sm:inline-flex" />
+                            <MissionTypeBadge type={m.type} className="shrink-0 hidden lg:inline-flex" />
                           </div>
-                          <div className="mt-0.5 truncate text-xs text-ink/55">
+                          <div className="mt-0.5 truncate text-[11px] lg:text-xs text-ink/55">
                             {m.client} · {m.city} · {fmt.timeRange(m.startISO, m.endISO)}
                           </div>
                         </div>
@@ -241,10 +241,11 @@ export default function AdminDashboardPage() {
             </div>
 
             {overCao.length > 0 && (
-              <div className="rounded-2xl border border-amber-200 bg-amber-50/60 overflow-hidden">
-                <div className="border-b border-amber-200 px-4 lg:px-5 py-3 flex items-center gap-2 text-amber-900">
-                  <AlertTriangle size={16} />
-                  <h3 className="font-display text-base font-black tracking-tight">
+              <div className="rounded-xl lg:rounded-2xl border border-amber-200 bg-amber-50/60 overflow-hidden">
+                <div className="border-b border-amber-200 px-3 lg:px-5 py-2.5 lg:py-3 flex items-center gap-2 text-amber-900">
+                  <AlertTriangle size={14} className="lg:hidden" />
+                  <AlertTriangle size={16} className="hidden lg:block" />
+                  <h3 className="font-display text-sm lg:text-base font-black tracking-tight">
                     {t("adm_cao_warnings")}
                   </h3>
                 </div>
@@ -253,7 +254,7 @@ export default function AdminDashboardPage() {
                     <li key={employee.id}>
                       <Link
                         href={`/admin/employees/${employee.id}`}
-                        className="flex items-center gap-3 px-4 lg:px-5 py-3 hover:bg-amber-100/40"
+                        className="flex items-center gap-2.5 lg:gap-3 px-3 lg:px-5 py-2.5 lg:py-3 hover:bg-amber-100/40"
                       >
                         <Avatar
                           initials={employee.initials}
@@ -286,37 +287,45 @@ export default function AdminDashboardPage() {
             )}
           </div>
 
-          <div className="space-y-4 lg:space-y-6">
-            <div className="rounded-2xl border border-line bg-white overflow-hidden">
-              <div className="border-b border-line px-4 lg:px-5 py-3 lg:py-3.5">
-                <h3 className="flex items-center gap-2 font-display text-base font-black tracking-tightest text-navy-900">
-                  <Activity size={16} />
+          <div className="space-y-3 lg:space-y-6 min-w-0">
+            <div className="rounded-xl lg:rounded-2xl border border-line bg-white overflow-hidden">
+              <div className="border-b border-line px-3 lg:px-5 py-2.5 lg:py-3.5">
+                <h3 className="flex items-center gap-2 font-display text-sm lg:text-base font-black tracking-tightest text-navy-900">
+                  <Activity size={14} className="lg:hidden" />
+                  <Activity size={16} className="hidden lg:block" />
                   {t("adm_recent")}
                 </h3>
               </div>
               {recent.length === 0 ? (
-                <div className="px-4 lg:px-5 py-6 text-sm text-ink/55">
+                <div className="px-3 lg:px-5 py-5 text-sm text-ink/55">
                   {t("adm_recent_empty")}
                 </div>
               ) : (
                 <ul className="divide-y divide-line">
                   {recent.map((n) => (
-                    <li key={n.id} className="px-4 lg:px-5 py-3 lg:py-3.5">
-                      <div className="flex items-start gap-3">
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-700">
+                    <li key={n.id} className="px-3 lg:px-5 py-2.5 lg:py-3.5">
+                      <div className="flex items-start gap-2.5 lg:gap-3">
+                        <div className="flex h-7 w-7 lg:h-8 lg:w-8 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-700">
                           {n.kind === "geaccepteerd" ? (
-                            <CheckCircle2 size={14} />
+                            <CheckCircle2 size={12} className="lg:hidden" />
                           ) : n.kind === "nieuwe-opdracht" ? (
-                            <Sparkles size={14} />
+                            <Sparkles size={12} className="lg:hidden" />
                           ) : (
-                            <Briefcase size={14} />
+                            <Briefcase size={12} className="lg:hidden" />
+                          )}
+                          {n.kind === "geaccepteerd" ? (
+                            <CheckCircle2 size={14} className="hidden lg:block" />
+                          ) : n.kind === "nieuwe-opdracht" ? (
+                            <Sparkles size={14} className="hidden lg:block" />
+                          ) : (
+                            <Briefcase size={14} className="hidden lg:block" />
                           )}
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-bold text-navy-900">
+                          <p className="truncate text-[13px] lg:text-sm font-bold text-navy-900">
                             {n.title}
                           </p>
-                          <p className="truncate text-xs text-ink/55">
+                          <p className="truncate text-[11px] lg:text-xs text-ink/55">
                             {n.body} · {fmt.timeAgo(n.createdAt, REFERENCE_TODAY)}
                           </p>
                         </div>
@@ -327,34 +336,35 @@ export default function AdminDashboardPage() {
               )}
             </div>
 
-            <div className="rounded-2xl bg-navy-700 p-4 lg:p-5 text-white overflow-hidden relative">
+            <div className="rounded-xl lg:rounded-2xl bg-navy-700 p-3.5 lg:p-5 text-white overflow-hidden relative">
               <div className="absolute inset-0 dot-bg opacity-40" />
               <div className="relative">
-                <h3 className="flex items-center gap-2 font-display text-base font-black tracking-tightest">
-                  <ShieldCheck size={16} className="text-gold-400" />
+                <h3 className="flex items-center gap-2 font-display text-sm lg:text-base font-black tracking-tightest">
+                  <ShieldCheck size={14} className="lg:hidden text-gold-400" />
+                  <ShieldCheck size={16} className="hidden lg:block text-gold-400" />
                   {t("adm_quick")}
                 </h3>
-                <p className="mt-1 text-xs text-white/65">
+                <p className="mt-1 text-[11px] lg:text-xs text-white/65 line-clamp-2">
                   {t("adm_quick_desc")}
                 </p>
-                <div className="mt-4 space-y-2">
+                <div className="mt-3 lg:mt-4 space-y-1.5 lg:space-y-2">
                   <Link
                     href="/admin/missions/new"
-                    className="flex items-center justify-between gap-2 rounded-xl bg-gold-400 px-3 lg:px-4 py-2.5 text-sm font-bold text-navy-900 transition hover:bg-gold-300"
+                    className="flex items-center justify-between gap-2 rounded-lg lg:rounded-xl bg-gold-400 px-3 py-2 lg:py-2.5 text-[13px] lg:text-sm font-bold text-navy-900 transition hover:bg-gold-300"
                   >
                     <span className="truncate">{t("adm_quick_new")}</span>
                     <ArrowUpRight size={14} className="shrink-0" />
                   </Link>
                   <Link
                     href="/admin/planning"
-                    className="flex items-center justify-between gap-2 rounded-xl bg-white/10 px-3 lg:px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/15"
+                    className="flex items-center justify-between gap-2 rounded-lg lg:rounded-xl bg-white/10 px-3 py-2 lg:py-2.5 text-[13px] lg:text-sm font-bold text-white transition hover:bg-white/15"
                   >
                     <span className="truncate">{t("adm_quick_planning")}</span>
                     <ArrowUpRight size={14} className="shrink-0" />
                   </Link>
                   <Link
                     href="/admin/employees"
-                    className="flex items-center justify-between gap-2 rounded-xl bg-white/10 px-3 lg:px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/15"
+                    className="flex items-center justify-between gap-2 rounded-lg lg:rounded-xl bg-white/10 px-3 py-2 lg:py-2.5 text-[13px] lg:text-sm font-bold text-white transition hover:bg-white/15"
                   >
                     <span className="truncate">{t("adm_quick_employees")}</span>
                     <ArrowUpRight size={14} className="shrink-0" />
