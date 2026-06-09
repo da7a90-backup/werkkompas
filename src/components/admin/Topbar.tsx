@@ -43,7 +43,9 @@ export function AdminTopbar({ title, description, action }: Props) {
             className="h-full w-full bg-transparent text-ink placeholder:text-ink/40 focus:outline-none"
           />
         </div>
-        <LanguageMenu variant="light" placement="bottom-right" />
+        <div className="hidden lg:block">
+          <LanguageMenu variant="light" placement="bottom-right" />
+        </div>
         <button
           className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line text-ink/70 transition hover:border-navy-700/30 hover:text-navy-700"
           aria-label={t("e_notif_title")}
