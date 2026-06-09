@@ -117,7 +117,7 @@ function AdminMessagesContent() {
         title={t("adm_messages_title")}
         description={t("adm_messages_desc")}
       />
-      <div className="flex h-[calc(100dvh-7.5rem)] lg:h-[calc(100dvh-64px)] min-h-0 border-t border-line">
+      <div className="flex h-[calc(100dvh-max(env(safe-area-inset-top),1.75rem)-7rem)] lg:h-[calc(100dvh-64px)] min-h-0 border-t border-line">
         {/* Thread list — full width on mobile when no conversation open, else hidden */}
         <div
           className={cn(
@@ -272,7 +272,10 @@ function AdminMessagesContent() {
                   })
                 )}
               </div>
-              <div className="border-t border-line bg-white p-3">
+              <div
+                className="border-t border-line bg-white p-3"
+                style={{ paddingBottom: "max(env(safe-area-inset-bottom), 0.75rem)" }}
+              >
                 <div className="flex items-end gap-2">
                   <div className="flex-1 rounded-2xl border border-line bg-canvas focus-within:border-navy-700 focus-within:bg-white">
                     <textarea

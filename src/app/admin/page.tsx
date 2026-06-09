@@ -106,7 +106,7 @@ export default function AdminDashboardPage() {
       />
 
       <div className="p-4 lg:p-6 space-y-5 lg:space-y-6">
-        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="grid grid-cols-2 gap-3 lg:gap-4 lg:grid-cols-4">
           <Stat
             label={t("adm_stat_open_shifts")}
             value={openCount + invitedCount}

@@ -23,17 +23,17 @@ export function Stat({
   return (
     <div
       className={cn(
-        "relative flex flex-col gap-2 rounded-2xl border p-5",
+        "relative flex flex-col gap-1.5 lg:gap-2 rounded-2xl border p-3.5 lg:p-5",
         variant === "default" && "bg-white border-line",
         variant === "navy" && "bg-navy-700 text-white border-navy-700",
         variant === "gold" && "bg-gold-400 text-navy-900 border-gold-400",
         className
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <span
           className={cn(
-            "text-xs font-semibold uppercase tracking-wider",
+            "min-w-0 truncate text-[10px] lg:text-xs font-semibold uppercase tracking-wider",
             variant === "default" && "text-ink/55",
             variant === "navy" && "text-white/70",
             variant === "gold" && "text-navy-700"
@@ -44,20 +44,21 @@ export function Stat({
         {Icon && (
           <div
             className={cn(
-              "flex h-8 w-8 items-center justify-center rounded-lg",
+              "flex h-7 w-7 lg:h-8 lg:w-8 shrink-0 items-center justify-center rounded-lg",
               variant === "default" && "bg-navy-50 text-navy-700",
               variant === "navy" && "bg-white/10 text-white",
               variant === "gold" && "bg-navy-900/10 text-navy-900"
             )}
           >
-            <Icon size={16} />
+            <Icon size={14} className="lg:hidden" />
+            <Icon size={16} className="hidden lg:block" />
           </div>
         )}
       </div>
-      <div className="flex items-baseline gap-2">
+      <div className="flex items-baseline gap-2 min-w-0">
         <span
           className={cn(
-            "text-3xl font-black tracking-tightest tabular",
+            "truncate text-xl lg:text-3xl font-black tracking-tightest tabular",
             variant === "default" && "text-navy-900",
             variant === "navy" && "text-white",
             variant === "gold" && "text-navy-900"
@@ -82,7 +83,7 @@ export function Stat({
       {hint && (
         <span
           className={cn(
-            "text-xs",
+            "text-[11px] lg:text-xs leading-snug line-clamp-2",
             variant === "default" && "text-ink/55",
             variant === "navy" && "text-white/60",
             variant === "gold" && "text-navy-800/70"

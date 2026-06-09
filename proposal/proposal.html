@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="nl-NL">
+<head>
+<meta charset="UTF-8" />
+<title>Werkkompas — Projectvoorstel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #151515;
+    background: #f8f8f8;
+    font-feature-settings: "ss01" on, "cv11" on, "ss03" on;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    position: relative;
+    overflow: hidden;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ---------- Color & typography helpers ---------- */
+  .navy { background: #002F5C; color: white; }
+  .ink { color: #151515; }
+  .navy-text { color: #002F5C; }
+  .gold-text { color: #d7ba1d; }
+  .muted { color: rgba(21,21,21,0.55); }
+  .muted-light { color: rgba(255,255,255,0.65); }
+
+  .display { font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; }
+  .tight { letter-spacing: -0.025em; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Page padding ---------- */
+  .pad { padding: 20mm 18mm; }
+  .pad-x { padding-left: 18mm; padding-right: 18mm; }
+
+  /* ---------- Patterns ---------- */
+  .dot-grid {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px);
+    background-size: 18px 18px;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .gold-glow {
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(215,186,29,0.32), rgba(215,186,29,0));
+    pointer-events: none;
+  }
+  .royal-glow {
+    position: absolute;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(0,93,170,0.55), rgba(0,93,170,0));
+    pointer-events: none;
+  }
+
+  /* ---------- Badges ---------- */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .badge-light {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .badge-gold-dark {
+    background: rgba(215,186,29,0.14);
+    color: #d7ba1d;
+    border: 1px solid rgba(215,186,29,0.35);
+  }
+  .badge-navy {
+    background: rgba(0,47,92,0.08);
+    color: #002F5C;
+    border: 1px solid rgba(0,47,92,0.15);
+  }
+  .live-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #d7ba1d;
+  }
+
+  /* ---------- Logo ---------- */
+  .logo-row { display: flex; align-items: center; gap: 12px; }
+  .logo-word { font-size: 17px; font-weight: 800; letter-spacing: -0.025em; }
+
+  /* ---------- Cards ---------- */
+  .card {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 18px;
+    padding: 20px;
+  }
+  .card-tight { padding: 16px 18px; }
+  .card-navy {
+    background: #002F5C;
+    color: white;
+    border-radius: 18px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-gold {
+    background: #d7ba1d;
+    color: #001a35;
+    border-radius: 18px;
+    padding: 22px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .card-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: #002F5C;
+    color: #d7ba1d;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #002F5C;
+  }
+
+  /* ---------- Feature lists ---------- */
+  .features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 12.5px;
+    color: rgba(21,21,21,0.85);
+    line-height: 1.45;
+  }
+  .features li::before {
+    content: '';
+    margin-top: 5px;
+    flex: 0 0 6px;
+    width: 6px; height: 6px;
+    border-radius: 2px;
+    background: #d7ba1d;
+  }
+
+  .features-check li::before {
+    margin-top: 2px;
+    flex: 0 0 14px;
+    width: 14px; height: 14px;
+    border-radius: 4px;
+    background: #002F5C;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d7ba1d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+  }
+
+  /* ---------- Section headings ---------- */
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(0,47,92,0.06);
+    color: #002F5C;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-eyebrow .live-dot { background: #d7ba1d; }
+  .section-title {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    color: #002F5C;
+    margin-bottom: 10px;
+  }
+  .section-sub {
+    font-size: 14px;
+    color: rgba(21,21,21,0.6);
+    line-height: 1.55;
+    max-width: 480px;
+  }
+
+  /* ---------- Tables ---------- */
+  .timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .timeline .step {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 14px 16px;
+    position: relative;
+  }
+  .timeline .step .num {
+    font-size: 10px;
+    font-weight: 800;
+    color: rgba(0,47,92,0.6);
+    letter-spacing: 0.2em;
+  }
+  .timeline .step .label {
+    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #002F5C;
+    letter-spacing: -0.02em;
+  }
+  .timeline .step .meta {
+    margin-top: 6px;
+    font-size: 11px;
+    color: rgba(21,21,21,0.55);
+  }
+
+  /* ---------- Investment ---------- */
+  .invest-hero {
+    background: #002F5C;
+    color: white;
+    border-radius: 22px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .invest-amount {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    color: #d7ba1d;
+    font-variant-numeric: tabular-nums;
+  }
+  .invest-amount .cur {
+    font-size: 28px;
+    vertical-align: top;
+    color: rgba(215,186,29,0.55);
+    margin-right: 6px;
+    line-height: 1;
+  }
+  .invest-meta {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  .milestone {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: grid;
+    grid-template-columns: 76px 1fr auto;
+    gap: 18px;
+    align-items: center;
+  }
+  .milestone .pct {
+    font-size: 24px;
+    font-weight: 900;
+    color: #002F5C;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+  }
+  .milestone .title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #002F5C;
+    letter-spacing: -0.02em;
+  }
+  .milestone .desc {
+    margin-top: 2px;
+    font-size: 12px;
+    color: rgba(21,21,21,0.6);
+    line-height: 1.5;
+  }
+  .milestone .amt {
+    font-size: 18px;
+    font-weight: 800;
+    color: #002F5C;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+  .milestone-kick { border-left: 4px solid #d7ba1d; }
+  .milestone-beta { border-left: 4px solid #005DAA; }
+  .milestone-prod { border-left: 4px solid #10b981; }
+
+  /* ---------- Signature ---------- */
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .sig-box {
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+    padding: 16px 18px;
+    background: white;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sig-line {
+    border-top: 1px dashed rgba(21,21,21,0.25);
+    padding-top: 6px;
+    font-size: 11px;
+    color: rgba(21,21,21,0.55);
+  }
+
+  /* ---------- Footer ---------- */
+  .page-footer {
+    position: absolute;
+    left: 18mm;
+    right: 18mm;
+    bottom: 12mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9.5px;
+    color: rgba(21,21,21,0.4);
+    border-top: 1px solid #e6e6e6;
+    padding-top: 8px;
+  }
+  .page-footer-light {
+    border-top-color: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.5);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<section class="page navy" style="position: relative;">
+  <div class="dot-grid"></div>
+  <div class="gold-glow" style="top: -180px; right: -160px;"></div>
+  <div class="royal-glow" style="bottom: -160px; left: -160px;"></div>
+
+  <div class="pad" style="position: relative; height: 100%; display: flex; flex-direction: column;">
+    <header style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="logo-row">
+        <svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="white"/>
+          <circle cx="32" cy="32" r="22" fill="none" stroke="rgba(0,47,92,0.18)" stroke-width="2"/>
+          <g transform="translate(32 32)">
+            <polygon points="0,-22 6,0 0,22 -6,0" fill="#d7ba1d"/>
+            <polygon points="0,-22 6,0 0,0" fill="#002F5C"/>
+            <circle r="3" fill="white"/>
+            <circle r="3" fill="none" stroke="#002F5C" stroke-width="1"/>
+          </g>
+        </svg>
+        <span class="logo-word">Werkkompas</span>
+      </div>
+      <div class="badge badge-light">
+        <span class="live-dot"></span>
+        Projectvoorstel · 2026
+      </div>
+    </header>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; margin-top: -10mm;">
+      <div class="badge badge-gold-dark" style="margin-bottom: 26px;">
+        <span class="live-dot"></span>
+        Particuliere beveiliging · Werkkompas B.V.
+      </div>
+      <h1 class="display" style="font-size: 92px; margin-bottom: 26px;">
+        Plan de dienst.<br/>
+        <span class="gold-text">Bemen het werk.</span>
+      </h1>
+      <p style="font-size: 17px; max-width: 540px; color: rgba(255,255,255,0.78); line-height: 1.55;">
+        Eén plek voor opdrachten, beschikbaarheid en directe communicatie tussen planner en beveiliger. Een installeerbare web-app voor je medewerkers, een planning-console voor jouw bureau, en CAO-bewaking ingebakken.
+      </p>
+
+      <div style="margin-top: 38px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 540px;">
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55);">PWA</div>
+          <div style="margin-top: 4px; font-size: 13px; font-weight: 700;">Beginscherm</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55);">Push</div>
+          <div style="margin-top: 4px; font-size: 13px; font-weight: 700;">Meldingen</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55);">Chat</div>
+          <div style="margin-top: 4px; font-size: 13px; font-weight: 700;">In-app</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px;">
+          <div style="font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.55);">CAO</div>
+          <div style="margin-top: 4px; font-size: 13px; font-weight: 700;">Bewaking</div>
+        </div>
+      </div>
+    </div>
+
+    <footer style="display: flex; justify-content: space-between; align-items: flex-end; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.12);">
+      <div>
+        <div class="eyebrow" style="color: rgba(255,255,255,0.55); margin-bottom: 6px;">Voor</div>
+        <div style="font-size: 17px; font-weight: 800; letter-spacing: -0.02em;">Werkkompas B.V.</div>
+        <div style="font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px;">9 juni 2026 · Ref. WK-2026-001</div>
+      </div>
+      <div style="text-align: right;">
+        <div class="eyebrow" style="color: rgba(255,255,255,0.55); margin-bottom: 6px;">Investering</div>
+        <div class="display tabular gold-text" style="font-size: 54px; line-height: 1;">
+          <span style="font-size: 22px; vertical-align: top; opacity: 0.6; margin-right: 4px;">€</span>12.350
+        </div>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 — SCOPE ============ -->
+<section class="page" style="background: #f8f8f8; position: relative;">
+  <div class="pad">
+    <div class="section-eyebrow"><span class="live-dot"></span>Scope</div>
+    <h2 class="section-title">Wat we bouwen</h2>
+    <p class="section-sub">Een installeerbare Progressive Web App voor je beveiligers, een planning-console voor jouw bureau, en de bijbehorende deployment + overdracht. Vaste prijs, vaste scope.</p>
+
+    <div style="margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+
+      <!-- Medewerker app -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="3"/>
+              <line x1="12" y1="18" x2="12" y2="18"/>
+            </svg>
+          </span>
+          <div>
+            <div class="card-title">Medewerker-app</div>
+            <div style="font-size: 10px; font-weight: 700; color: rgba(0,47,92,0.55); letter-spacing: 0.16em; text-transform: uppercase;">PWA · mobile-first</div>
+          </div>
+        </div>
+        <ul class="features features-check">
+          <li>Installeerbaar op het beginscherm (iOS &amp; Android)</li>
+          <li>Diensten en details bekijken</li>
+          <li>Diensten direct accepteren of afwijzen</li>
+          <li>Wekelijkse beschikbaarheid instellen</li>
+          <li>Push-notificaties voor nieuwe opdrachten en wijzigingen</li>
+          <li>In-app chat met de planner</li>
+        </ul>
+      </div>
+
+      <!-- Admin console -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="9" y1="21" x2="9" y2="9"/>
+            </svg>
+          </span>
+          <div>
+            <div class="card-title">Beheerconsole</div>
+            <div style="font-size: 10px; font-weight: 700; color: rgba(0,47,92,0.55); letter-spacing: 0.16em; text-transform: uppercase;">Planner · web</div>
+          </div>
+        </div>
+        <ul class="features features-check">
+          <li>Opdrachten aanmaken en toewijzen</li>
+          <li>Globale weekplanning (medewerkers × diensten)</li>
+          <li>Medewerkersbeheer — profielen aanmaken &amp; bewerken</li>
+          <li>Automatische CAO-urencheck bij toewijzing</li>
+          <li>In-app chat met medewerkers</li>
+          <li>Activiteits- en bezetting-overzicht</li>
+        </ul>
+      </div>
+
+      <!-- Deployment -->
+      <div class="card-navy" style="grid-column: span 2;">
+        <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: center;">
+          <div>
+            <div class="badge badge-gold-dark" style="margin-bottom: 12px;">Oplevering &amp; overdracht</div>
+            <h3 class="display" style="font-size: 30px; margin-bottom: 8px;">Klaar voor productie. Volledige overdracht.</h3>
+            <p style="font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5;">
+              We deployen op een eigen productie-omgeving, dragen de source code over, en leveren een korte technische handleiding voor onderhoud en doorontwikkeling.
+            </p>
+          </div>
+          <ul class="features features-check" style="--check-bg: #d7ba1d;">
+            <li style="color: rgba(255,255,255,0.92);">Productie-deployment op werkkompasbv.nl</li>
+            <li style="color: rgba(255,255,255,0.92);">Source-code overdracht (private GitHub repo)</li>
+            <li style="color: rgba(255,255,255,0.92);">Korte technische documentatie (setup, deploy, onderhoud)</li>
+            <li style="color: rgba(255,255,255,0.92);">Configuratie en deploy-runbook</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div style="margin-top: 22px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+        <div class="section-eyebrow" style="margin-bottom: 0;"><span class="live-dot"></span>Tijdlijn</div>
+      </div>
+      <div class="timeline">
+        <div class="step">
+          <div class="num">WEEK 0</div>
+          <div class="label">Kickoff</div>
+          <div class="meta">Akkoord, eerste factuur, repository &amp; design-baseline opgezet.</div>
+        </div>
+        <div class="step" style="border-left: 4px solid #005DAA;">
+          <div class="num">WEEK 4</div>
+          <div class="label">Publieke beta</div>
+          <div class="meta">PWA installeerbaar, beheerconsole live, mock-clients voor test.</div>
+        </div>
+        <div class="step" style="border-left: 4px solid #10b981;">
+          <div class="num">WEEK 6</div>
+          <div class="label">Productie go-live</div>
+          <div class="meta">Deploy op werkkompasbv.nl + 48 u monitoring zonder major incident.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Werkkompas B.V. — Projectvoorstel WK-2026-001</span>
+    <span>Pagina 2 · Scope</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 3 — INVESTERING ============ -->
+<section class="page" style="background: #f8f8f8; position: relative;">
+  <div class="pad">
+
+    <div class="section-eyebrow"><span class="live-dot"></span>Investering</div>
+    <h2 class="section-title">Vaste prijs, drie betaalmomenten</h2>
+    <p class="section-sub">Eén projectbedrag, opgedeeld over de kickoff en twee opleveringsmilestones met duidelijke acceptatiecriteria.</p>
+
+    <div class="invest-hero" style="margin-top: 22px;">
+      <div class="dot-grid" style="opacity: 0.32;"></div>
+      <div class="gold-glow" style="top: -200px; right: -160px; width: 360px; height: 360px;"></div>
+      <div style="position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;">
+        <div>
+          <div class="invest-meta">Totaal projectbedrag</div>
+          <div class="invest-amount" style="margin-top: 8px;">
+            <span class="cur">€</span>12.350
+          </div>
+          <div style="margin-top: 8px; font-size: 11px; color: rgba(255,255,255,0.55);">Vrijgesteld van btw indien van toepassing · prijzen in euro · vaste prijs voor de scope op pagina 2</div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(3, auto); gap: 18px; padding: 14px 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 14px;">
+          <div style="text-align: center;">
+            <div class="invest-meta" style="font-size: 9px;">Kickoff</div>
+            <div class="tabular" style="font-size: 20px; font-weight: 800; color: #d7ba1d; margin-top: 4px;">30%</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="invest-meta" style="font-size: 9px;">Beta</div>
+            <div class="tabular" style="font-size: 20px; font-weight: 800; color: white; margin-top: 4px;">40%</div>
+          </div>
+          <div style="text-align: center;">
+            <div class="invest-meta" style="font-size: 9px;">Productie</div>
+            <div class="tabular" style="font-size: 20px; font-weight: 800; color: #10b981; margin-top: 4px;">30%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Milestones -->
+    <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 6px;">
+      <div class="milestone milestone-kick">
+        <div class="pct">30%</div>
+        <div>
+          <div class="title">Kickoff — bij ondertekening</div>
+          <div class="desc">Avance pour kickstart le projet. Geactiveerd zodra het voorstel is getekend en de eerste factuur is voldaan. Repository, design-baseline en planning worden opgezet.</div>
+        </div>
+        <div class="amt">€ 3.705</div>
+      </div>
+
+      <div class="milestone milestone-beta">
+        <div class="pct">40%</div>
+        <div>
+          <div class="title">Milestone 1 — Publieke beta</div>
+          <div class="desc">Te leveren bij oplevering van de publieke betaversie: installeerbare PWA, complete beheerconsole, in-app chat en CAO-check werkend op test-data.</div>
+        </div>
+        <div class="amt">€ 4.940</div>
+      </div>
+
+      <div class="milestone milestone-prod">
+        <div class="pct">30%</div>
+        <div>
+          <div class="title">Milestone 2 — Productie op werkkompasbv.nl</div>
+          <div class="desc">Te leveren na deploy op werkkompasbv.nl met 48 uur monitoring zonder major incident. Inclusief source-code overdracht en korte documentatie.</div>
+        </div>
+        <div class="amt">€ 3.705</div>
+      </div>
+    </div>
+
+    <!-- Niet inbegrepen -->
+    <div style="margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+      <div class="card card-tight">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+          <span class="badge badge-navy">Niet inbegrepen</span>
+        </div>
+        <ul class="features">
+          <li>Domein- en hostingkosten (geschat &lt; €10 / mnd, door Werkkompas)</li>
+          <li>Eventuele kosten van push-notificatie-service boven free-tier</li>
+          <li>Functionele uitbreidingen buiten bovenstaande scope</li>
+        </ul>
+      </div>
+      <div class="card card-tight">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+          <span class="badge badge-navy">Acceptatie</span>
+        </div>
+        <ul class="features">
+          <li>Milestones worden afgenomen op basis van demo + criteria-checklist</li>
+          <li>Productie-milestone vereist 48 u zonder major incident na deploy</li>
+          <li>Betaling 14 dagen na akkoord op de milestone</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Werkkompas B.V. — Projectvoorstel WK-2026-001</span>
+    <span>Pagina 3 · Investering</span>
+  </div>
+</section>
+
+<!-- ============ PAGE 4 — AKKOORD ============ -->
+<section class="page" style="background: #f8f8f8; position: relative;">
+  <div class="pad">
+
+    <div class="section-eyebrow"><span class="live-dot"></span>Akkoord</div>
+    <h2 class="section-title">Klaar om te starten</h2>
+    <p class="section-sub">Onderteken hieronder om akkoord te geven op scope, tijdlijn en betalingsstructuur. We sturen direct na ontvangst de eerste factuur (30%) en plannen de kickoff in.</p>
+
+    <!-- Samenvatting -->
+    <div style="margin-top: 24px; background: white; border: 1px solid #e6e6e6; border-radius: 18px; padding: 22px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+        <div>
+          <div class="eyebrow" style="color: rgba(0,47,92,0.55); margin-bottom: 4px;">Samenvatting</div>
+          <div style="font-size: 18px; font-weight: 800; color: #002F5C; letter-spacing: -0.02em;">Werkkompas Planning-app</div>
+        </div>
+        <div style="text-align: right;">
+          <div class="eyebrow" style="color: rgba(0,47,92,0.55); margin-bottom: 4px;">Totaal</div>
+          <div class="tabular" style="font-size: 28px; font-weight: 900; color: #002F5C; letter-spacing: -0.03em;">€ 12.350</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding-top: 14px; border-top: 1px solid #e6e6e6;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; color: rgba(0,47,92,0.55); letter-spacing: 0.18em; text-transform: uppercase;">Doorlooptijd</div>
+          <div style="font-size: 14px; font-weight: 800; color: #002F5C; margin-top: 2px;">6 weken</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; color: rgba(0,47,92,0.55); letter-spacing: 0.18em; text-transform: uppercase;">Geldigheid voorstel</div>
+          <div style="font-size: 14px; font-weight: 800; color: #002F5C; margin-top: 2px;">30 dagen</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; color: rgba(0,47,92,0.55); letter-spacing: 0.18em; text-transform: uppercase;">Eerste factuur</div>
+          <div style="font-size: 14px; font-weight: 800; color: #002F5C; margin-top: 2px;">€ 3.705 · bij akkoord</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signature -->
+    <div class="sig-grid">
+      <div class="sig-box">
+        <div>
+          <div class="eyebrow" style="color: rgba(0,47,92,0.55);">Opdrachtgever</div>
+          <div style="margin-top: 4px; font-size: 15px; font-weight: 800; color: #002F5C;">Werkkompas B.V.</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="sig-line">Naam</div>
+          <div class="sig-line">Datum</div>
+        </div>
+        <div class="sig-line">Handtekening</div>
+      </div>
+      <div class="sig-box">
+        <div>
+          <div class="eyebrow" style="color: rgba(0,47,92,0.55);">Opdrachtnemer</div>
+          <div style="margin-top: 4px; font-size: 15px; font-weight: 800; color: #002F5C;">Studio · Ontwikkeling</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div class="sig-line">Naam</div>
+          <div class="sig-line">Datum</div>
+        </div>
+        <div class="sig-line">Handtekening</div>
+      </div>
+    </div>
+
+    <!-- Closing card -->
+    <div class="card-gold" style="margin-top: 22px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+        <div>
+          <div class="eyebrow" style="color: rgba(0,26,53,0.55);">Volgende stap</div>
+          <div style="margin-top: 4px; font-size: 18px; font-weight: 900; letter-spacing: -0.02em; color: #001a35;">Stuur een getekende kopie retour om de kickoff in te plannen.</div>
+        </div>
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#001a35" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <span>Werkkompas B.V. — Projectvoorstel WK-2026-001</span>
+    <span>Pagina 4 · Akkoord</span>
+  </div>
+</section>
+
+</body>
+</html>

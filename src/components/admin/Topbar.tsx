@@ -19,7 +19,7 @@ export function AdminTopbar({ title, description, action }: Props) {
   const unread = unreadNotifsForAdmin();
   const [q, setQ] = useState("");
   return (
-    <header className="sticky lg:top-0 top-14 z-20 border-b border-line bg-white/85 backdrop-blur-md">
+    <header className="sticky top-[max(calc(env(safe-area-inset-top)+3.5rem),5.25rem)] lg:top-0 z-20 border-b border-line bg-white/85 backdrop-blur-md">
       <div className="flex h-14 lg:h-16 items-center gap-2 lg:gap-4 px-4 lg:px-6">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">

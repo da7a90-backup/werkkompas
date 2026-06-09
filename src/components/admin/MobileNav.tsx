@@ -31,22 +31,29 @@ export function AdminMobileNav() {
 
   return (
     <>
-      <div className="lg:hidden sticky top-0 z-30 flex h-14 items-center justify-between border-b border-line bg-white px-4">
-        <div className="flex items-center gap-2.5">
-          <Logo size={28} />
-          <span className="font-display text-base font-black tracking-tightest text-navy-900">
-            Werkkompas
-          </span>
-        </div>
-        <div className="flex items-center gap-2">
-          <LanguageMenu variant="light" />
-          <button
-            onClick={() => setOpen(true)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line text-navy-700 hover:bg-navy-50 focus-ring"
-            aria-label="Menu"
-          >
-            <Menu size={20} />
-          </button>
+      <div
+        className="lg:hidden sticky top-0 z-30 bg-navy-700"
+        style={{
+          paddingTop: "max(env(safe-area-inset-top), 1.75rem)",
+        }}
+      >
+        <div className="flex h-14 items-center justify-between border-b border-line bg-white px-4">
+          <div className="flex items-center gap-2.5">
+            <Logo size={28} />
+            <span className="font-display text-base font-black tracking-tightest text-navy-900">
+              Werkkompas
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <LanguageMenu variant="light" />
+            <button
+              onClick={() => setOpen(true)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line text-navy-700 hover:bg-navy-50 focus-ring"
+              aria-label="Menu"
+            >
+              <Menu size={20} />
+            </button>
+          </div>
         </div>
       </div>
       {open && (
@@ -56,7 +63,10 @@ export function AdminMobileNav() {
             onClick={() => setOpen(false)}
           />
           <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] animate-slide-up bg-white shadow-elevated flex flex-col">
-            <div className="flex items-center justify-between border-b border-line px-5 py-4">
+            <div
+              className="flex items-center justify-between border-b border-line px-5 pb-4"
+              style={{ paddingTop: "calc(env(safe-area-inset-top) + 1rem)" }}
+            >
               <div className="flex items-center gap-2">
                 <Logo size={28} />
                 <span className="font-display font-black tracking-tightest text-navy-900">
@@ -98,7 +108,10 @@ export function AdminMobileNav() {
                 })}
               </ul>
             </nav>
-            <div className="border-t border-line p-3">
+            <div
+              className="border-t border-line p-3"
+              style={{ paddingBottom: "max(env(safe-area-inset-bottom), 0.75rem)" }}
+            >
               <div className="rounded-2xl bg-navy-700 p-4 flex items-center justify-between gap-2">
                 <RoleSwitcher />
                 <LanguageMenu variant="dark" placement="top-right" />

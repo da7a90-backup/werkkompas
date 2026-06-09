@@ -179,7 +179,7 @@ export default function AdminEmployeeDetailPage() {
             </ul>
           </section>
 
-          <section className="grid gap-4 sm:grid-cols-3">
+          <section className="grid grid-cols-3 gap-3 sm:gap-4">
             <Stat
               label={t("adm_this_week_label")}
               value={fmt.hours(week)}
