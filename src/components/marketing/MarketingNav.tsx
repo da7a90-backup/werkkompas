@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { LanguageMenu } from "@/components/shared/LanguageMenu";
+import { LayoutMenu } from "@/components/shared/LayoutMenu";
 import { useT } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
@@ -53,6 +54,7 @@ export function MarketingNav() {
         </nav>
         <div className="flex items-center gap-2">
           <LanguageMenu variant={scrolled ? "light" : "dark"} />
+          <LayoutMenu variant={scrolled ? "light" : "dark"} />
           <Link
             href="/login"
             className={cn(

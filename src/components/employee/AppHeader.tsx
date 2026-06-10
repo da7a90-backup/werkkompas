@@ -8,6 +8,7 @@ import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 import { RoleSwitcher } from "@/components/shared/RoleSwitcher";
 import { LanguageMenu } from "@/components/shared/LanguageMenu";
+import { LayoutMenu } from "@/components/shared/LayoutMenu";
 import { useT } from "@/lib/i18n";
 
 interface Props {
@@ -85,6 +86,7 @@ export function AppHeader({ variant = "home", title, showSwitch, className }: Pr
         </Link>
         <div className="flex items-center gap-1.5">
           <LanguageMenu variant="dark" />
+          <LayoutMenu variant="dark" />
           {showSwitch && <RoleSwitcher compact />}
           <Link
             href="/employee/notifications"

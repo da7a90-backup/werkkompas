@@ -35,12 +35,25 @@ const config: Config = {
           800: "#4a3a01",
         },
         canvas: "#f8f8f8",
+        // Variant B (Editorial) — ivory canvas + warm hairline rules.
+        ivory: "#f6f1e7",
+        stone: {
+          50: "#f7f4ee",
+          100: "#ecdfca",
+          200: "#dbc9a6",
+          300: "#c0a16e",
+          400: "#a48450",
+          500: "#85683b",
+          600: "#634d2d",
+          700: "#3f311c",
+        },
         ink: "#151515",
         line: "#e6e6e6",
         muted: "#6b7280",
       },
       fontFamily: {
         sans: [
+          "var(--font-inter)",
           "Inter",
           "ui-sans-serif",
           "system-ui",
@@ -50,9 +63,26 @@ const config: Config = {
           "sans-serif",
         ],
         display: [
+          "var(--font-inter)",
           "Inter",
           "ui-sans-serif",
           "system-ui",
+          "sans-serif",
+        ],
+        // Variant B (Editorial)
+        serif: [
+          "var(--font-fraunces)",
+          "Fraunces",
+          "ui-serif",
+          "Georgia",
+          "serif",
+        ],
+        // Variant C (Maximalist) — condensed display
+        poster: [
+          "var(--font-archivo-black)",
+          "Archivo Black",
+          "var(--font-inter)",
+          "Inter",
           "sans-serif",
         ],
       },

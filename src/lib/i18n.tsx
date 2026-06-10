@@ -477,8 +477,6 @@ const nl: Dict = {
 
   mk_about_eyebrow: "Over Werkkompas B.V.",
   mk_about_title: "Jouw partner in werk en veiligheid",
-  mk_about_lead:
-    "Werkkompas verbindt werkzoekenden met organisaties in de beveiliging, zorg, transport, logistiek en alle branches. Wij ondersteunen kandidaten in hun zoektocht naar passend werk en organisaties in hun wervingsproces.",
   mk_about_body_2:
     "Onze expertise omvat ook crisisondersteuning en veiligheidsdiensten, waarbij wij veilige en betrouwbare oplossingen bieden met gecertificeerd personeel, zoals zorgprofessionals en beveiligers.",
   mk_about_body_3:
@@ -569,6 +567,15 @@ const nl: Dict = {
   // Login hub
   login_hub_title: "Inloggen",
   login_hub_subtitle: "Kies je rol om verder te gaan met Werkkompas.",
+
+  // Layout selector (demo-only — lets the client preview alternate visual identities)
+  layout_label: "Layout",
+  layout_modern: "Modern",
+  layout_modern_tag: "Kinetisch, bold — Studio Dumbar lijn",
+  layout_editorial: "Editorial",
+  layout_editorial_tag: "Premium magazine — Build in Amsterdam",
+  layout_maximalist: "Maximalist",
+  layout_maximalist_tag: "Poster art — Random Studio kinetisch",
 };
 
 const en: Dict = {
@@ -998,8 +1005,6 @@ const en: Dict = {
 
   mk_about_eyebrow: "About Werkkompas B.V.",
   mk_about_title: "Your partner in work and safety",
-  mk_about_lead:
-    "Werkkompas connects job seekers with organisations in security, healthcare, transport, logistics and every sector. We support candidates in their search for the right role and organisations in their recruitment process.",
   mk_about_body_2:
     "Our expertise also covers crisis support and security services, where we deliver safe and reliable solutions with certified staff — including healthcare professionals and security officers.",
   mk_about_body_3:
@@ -1077,6 +1082,14 @@ const en: Dict = {
 
   login_hub_title: "Sign in",
   login_hub_subtitle: "Pick your role to continue with Werkkompas.",
+
+  layout_label: "Layout",
+  layout_modern: "Modern",
+  layout_modern_tag: "Kinetic, bold — Studio Dumbar lineage",
+  layout_editorial: "Editorial",
+  layout_editorial_tag: "Premium magazine — Build in Amsterdam",
+  layout_maximalist: "Maximalist",
+  layout_maximalist_tag: "Poster art — Random Studio kinetic",
   login_brand_eyebrow: "Private security · Werkkompas B.V.",
 };
 
@@ -1509,8 +1522,6 @@ const fr: Dict = {
 
   mk_about_eyebrow: "À propos de Werkkompas B.V.",
   mk_about_title: "Votre partenaire travail et sécurité",
-  mk_about_lead:
-    "Werkkompas met en relation des candidats avec des organisations dans la sécurité, la santé, le transport, la logistique et tous secteurs. Nous accompagnons les candidats dans leur recherche d'emploi et les organisations dans leur recrutement.",
   mk_about_body_2:
     "Notre expertise couvre aussi le soutien de crise et les services de sécurité — solutions sûres et fiables avec du personnel certifié, professionnels de santé et agents inclus.",
   mk_about_body_3:
@@ -1588,6 +1599,14 @@ const fr: Dict = {
 
   login_hub_title: "Connexion",
   login_hub_subtitle: "Choisissez votre rôle pour continuer avec Werkkompas.",
+
+  layout_label: "Mise en page",
+  layout_modern: "Moderne",
+  layout_modern_tag: "Kinétique, audacieux — lignée Studio Dumbar",
+  layout_editorial: "Editorial",
+  layout_editorial_tag: "Magazine premium — Build in Amsterdam",
+  layout_maximalist: "Maximaliste",
+  layout_maximalist_tag: "Affiche kinétique — Random Studio",
   login_brand_eyebrow: "Sécurité privée · Werkkompas B.V.",
 };
 
@@ -2020,8 +2039,6 @@ const es: Dict = {
 
   mk_about_eyebrow: "Sobre Werkkompas B.V.",
   mk_about_title: "Tu socio en trabajo y seguridad",
-  mk_about_lead:
-    "Werkkompas conecta a buscadores de empleo con organizaciones en seguridad, sanidad, transporte, logística y todos los sectores. Acompañamos a candidatos en su búsqueda y a organizaciones en su selección.",
   mk_about_body_2:
     "Nuestra experiencia incluye apoyo en crisis y servicios de seguridad: soluciones seguras y fiables con personal certificado — incluidos profesionales sanitarios y vigilantes.",
   mk_about_body_3:
@@ -2099,6 +2116,14 @@ const es: Dict = {
 
   login_hub_title: "Iniciar sesión",
   login_hub_subtitle: "Elige tu rol para continuar con Werkkompas.",
+
+  layout_label: "Diseño",
+  layout_modern: "Moderno",
+  layout_modern_tag: "Cinético y atrevido — línea Studio Dumbar",
+  layout_editorial: "Editorial",
+  layout_editorial_tag: "Magazine premium — Build in Amsterdam",
+  layout_maximalist: "Maximalista",
+  layout_maximalist_tag: "Cartel cinético — Random Studio",
   login_brand_eyebrow: "Seguridad privada · Werkkompas B.V.",
 };
 

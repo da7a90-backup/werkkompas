@@ -5,6 +5,7 @@ import { useStore } from "@/lib/store";
 import { useState } from "react";
 import { DemoBadge } from "@/components/shared/RoleSwitcher";
 import { LanguageMenu } from "@/components/shared/LanguageMenu";
+import { LayoutMenu } from "@/components/shared/LayoutMenu";
 import { useT } from "@/lib/i18n";
 
 interface Props {
@@ -43,8 +44,9 @@ export function AdminTopbar({ title, description, action }: Props) {
             className="h-full w-full bg-transparent text-ink placeholder:text-ink/40 focus:outline-none"
           />
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-2">
           <LanguageMenu variant="light" placement="bottom-right" />
+          <LayoutMenu variant="light" placement="bottom-right" />
         </div>
         <button
           className="relative inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line text-ink/70 transition hover:border-navy-700/30 hover:text-navy-700"

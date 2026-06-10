@@ -1,13 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces, Archivo_Black } from "next/font/google";
 import { StoreProvider } from "@/lib/store";
 import { LanguageProvider } from "@/lib/i18n";
+import { LayoutVariantProvider } from "@/lib/layout-variant";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+// Variant B (Editorial) display serif — Fraunces variable.
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-fraunces",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+// Variant C (Maximalist) condensed display.
+const archivoBlack = Archivo_Black({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-archivo-black",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -43,10 +60,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl-NL" className={inter.variable}>
+    <html
+      lang="nl-NL"
+      data-layout="modern"
+      className={`${inter.variable} ${fraunces.variable} ${archivoBlack.variable}`}
+    >
       <body className="font-sans">
         <LanguageProvider>
-          <StoreProvider>{children}</StoreProvider>
+          <LayoutVariantProvider>
+            <StoreProvider>{children}</StoreProvider>
+          </LayoutVariantProvider>
         </LanguageProvider>
       </body>
     </html>

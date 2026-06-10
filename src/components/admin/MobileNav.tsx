@@ -15,6 +15,7 @@ import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/lib/utils";
 import { RoleSwitcher } from "@/components/shared/RoleSwitcher";
 import { LanguageMenu } from "@/components/shared/LanguageMenu";
+import { LayoutMenu } from "@/components/shared/LayoutMenu";
 import { useT } from "@/lib/i18n";
 
 export function AdminMobileNav() {
@@ -41,6 +42,7 @@ export function AdminMobileNav() {
           <Logo height={32} />
           <div className="flex items-center gap-2">
             <LanguageMenu variant="light" />
+            <LayoutMenu variant="light" />
             <button
               onClick={() => setOpen(true)}
               className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-line text-navy-700 hover:bg-navy-50 focus-ring"
@@ -104,7 +106,10 @@ export function AdminMobileNav() {
             >
               <div className="rounded-2xl bg-navy-700 p-4 flex items-center justify-between gap-2">
                 <RoleSwitcher />
-                <LanguageMenu variant="dark" placement="top-right" />
+                <div className="flex items-center gap-2">
+                  <LanguageMenu variant="dark" placement="top-right" />
+                  <LayoutMenu variant="dark" placement="top-right" />
+                </div>
               </div>
             </div>
           </div>
