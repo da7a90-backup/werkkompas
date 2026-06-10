@@ -96,7 +96,7 @@ export default function LandingPage() {
             </div>
 
             {/* Side stat callouts */}
-            <div className="lg:col-span-3 xl:col-span-4 grid grid-cols-3 lg:grid-cols-1 gap-3 lg:gap-2 lg:pl-6 lg:border-l lg:border-white/15">
+            <div className="lg:col-span-3 xl:col-span-4 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3 lg:gap-2 lg:pl-6 lg:border-l lg:border-white/15">
               {[
                 { v: t("mk_stat_years_value"), l: t("mk_stat_years") },
                 { v: t("mk_stat_clients_value"), l: t("mk_stat_clients") },
@@ -104,12 +104,12 @@ export default function LandingPage() {
               ].map((s, i) => (
                 <div
                   key={i}
-                  className="rounded-xl bg-white/5 ring-1 ring-inset ring-white/10 px-4 py-3 lg:py-4"
+                  className="flex items-baseline gap-3 sm:block rounded-xl bg-white/5 ring-1 ring-inset ring-white/10 px-4 py-3 lg:py-4 overflow-hidden"
                 >
-                  <div className="font-display text-2xl lg:text-3xl font-black tracking-tightest tabular text-gold-400">
+                  <div className="font-display text-3xl sm:text-2xl lg:text-3xl font-black tracking-tightest tabular text-gold-400 shrink-0">
                     {s.v}
                   </div>
-                  <div className="mt-0.5 text-[10px] font-bold uppercase tracking-widest text-white/55 leading-tight">
+                  <div className="sm:mt-0.5 text-[11px] sm:text-[10px] font-bold uppercase tracking-wider sm:tracking-widest text-white/55 leading-[1.15] min-w-0">
                     {s.l}
                   </div>
                 </div>
