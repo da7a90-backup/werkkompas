@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, ChevronDown, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronDown, Phone, ShieldCheck } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
 import { MarketingNav } from "@/components/marketing/MarketingNav";
@@ -38,6 +38,18 @@ export default function LandingPage() {
               "radial-gradient(closest-side, rgba(46,72,98,0.45), rgba(46,72,98,0))",
           }}
         />
+
+        {/* Vertical brand rail — uses the actual page-title strapline from werkkompasbv.nl */}
+        <div className="pointer-events-none absolute left-6 top-1/2 hidden lg:flex -translate-y-1/2 flex-col items-center gap-3">
+          <span className="h-16 w-px bg-white/20" />
+          <span
+            className="text-[10px] font-bold uppercase tracking-[0.32em] text-white/45 whitespace-nowrap"
+            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+          >
+            Uw partner in werk en veiligheid
+          </span>
+          <span className="h-16 w-px bg-white/20" />
+        </div>
 
         <div className="container-app relative flex-1 flex flex-col pt-24 lg:pt-24 pb-10 lg:pb-6">
           <div className="flex-1 flex flex-col justify-center">
@@ -105,14 +117,21 @@ export default function LandingPage() {
           </div>
           </div>
 
-          {/* Bottom row: scroll cue */}
-          <div className="mt-10 lg:mt-8 flex items-end justify-start border-t border-white/10 pt-5 lg:pt-4 text-[11px] uppercase tracking-widest text-white/55">
+          {/* Bottom row: scroll cue + real contact number from werkkompasbv.nl */}
+          <div className="mt-10 lg:mt-8 flex items-end justify-between border-t border-white/10 pt-5 lg:pt-4 text-[11px] uppercase tracking-widest text-white/55">
             <a
               href="#cijfers"
               className="inline-flex items-center gap-2 font-bold hover:text-white/85"
             >
               <span>{t("mk_scroll")}</span>
               <ChevronDown size={14} className="animate-bounce" />
+            </a>
+            <a
+              href={`tel:${t("mk_contact_phone_value").replace(/\s/g, "")}`}
+              className="hidden sm:inline-flex items-center gap-1.5 font-semibold tabular hover:text-white/85"
+            >
+              <Phone size={12} />
+              {t("mk_contact_phone_value")}
             </a>
           </div>
         </div>
