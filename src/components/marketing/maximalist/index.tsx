@@ -33,10 +33,10 @@ function HeroMaximalist() {
       id="welkom"
       className="relative isolate overflow-hidden bg-navy-900 text-white lg:min-h-screen flex flex-col"
     >
-      {/* Geometric accent shapes (Studio Dumbar lineage) */}
-      <div className="pointer-events-none absolute -right-20 -top-20 h-[420px] w-[420px] bg-gold-400 rotate-12" />
-      <div className="pointer-events-none absolute -left-32 bottom-20 h-[320px] w-[320px] bg-navy-700 -rotate-12" />
-      <div className="pointer-events-none absolute right-10 bottom-40 h-32 w-32 bg-gold-400/40 rotate-45" />
+      {/* Geometric accent shapes (Studio Dumbar lineage) — opacity-tuned so text stays legible on overlap */}
+      <div className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] bg-gold-400/25 rotate-12" />
+      <div className="pointer-events-none absolute -left-40 -bottom-20 h-[320px] w-[320px] bg-navy-700/40 -rotate-12" />
+      <div className="pointer-events-none absolute right-10 bottom-40 h-32 w-32 bg-gold-400/30 rotate-45" />
 
       <div className="container-app relative flex-1 flex flex-col pt-28 lg:pt-32 pb-12">
         <span className="inline-flex w-fit items-center gap-2 bg-gold-400 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.22em] text-navy-900 ring-2 ring-navy-900">
@@ -192,7 +192,7 @@ function AboutMaximalist() {
   const { t } = useT();
   return (
     <section id="over-ons" className="relative bg-navy-900 text-white py-20 lg:py-28 overflow-hidden">
-      <div className="pointer-events-none absolute -right-32 top-1/2 h-[360px] w-[360px] bg-gold-400 rotate-12" />
+      <div className="pointer-events-none absolute -right-40 top-1/4 h-[360px] w-[360px] bg-gold-400/20 rotate-12" />
       <div className="container-app relative">
         <span className="inline-flex items-center gap-2 bg-gold-400 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-navy-900 ring-2 ring-white">
           [ {t("mk_about_eyebrow")} ]
@@ -282,14 +282,14 @@ function ContactMaximalist() {
   };
   return (
     <section id="contact" className="relative bg-gold-400 text-navy-900 py-20 lg:py-28 overflow-hidden">
-      <div className="pointer-events-none absolute -left-32 -top-32 h-[400px] w-[400px] bg-navy-900 rotate-12" />
-      <div className="pointer-events-none absolute -right-20 bottom-20 h-[260px] w-[260px] bg-canvas -rotate-12" />
+      <div className="pointer-events-none absolute -right-40 -bottom-40 h-[420px] w-[420px] bg-navy-900/15 rotate-12" />
+      <div className="pointer-events-none absolute -left-24 bottom-10 h-[200px] w-[200px] bg-canvas/60 -rotate-12" />
       <div className="container-app relative">
         <span className="inline-flex items-center gap-2 bg-navy-900 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-gold-400 ring-2 ring-navy-900">
           [ {t("mk_contact_eyebrow")} ]
         </span>
         <h2
-          className="font-poster mt-8 leading-[0.85] tracking-tight uppercase"
+          className="font-poster mt-8 leading-[0.85] tracking-tight uppercase text-navy-900"
           style={{ fontSize: "clamp(3rem, 9vw, 8rem)" }}
         >
           {t("mk_hero_cta_primary")}

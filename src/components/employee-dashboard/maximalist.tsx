@@ -23,7 +23,7 @@ export function EmployeeDashboardMaximalist() {
     <div className="bg-canvas pb-10">
       {/* Hero poster panel */}
       <section className="relative overflow-hidden bg-gold-400 text-navy-900 px-5 pt-6 pb-8 ring-b-4 ring-navy-900">
-        <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 bg-navy-900 rotate-12" />
+        <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 bg-navy-900/20 rotate-12" />
         <span className="inline-flex bg-navy-900 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] text-gold-400 ring-2 ring-navy-900">
           [ {greeting} ]
         </span>

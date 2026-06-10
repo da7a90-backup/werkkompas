@@ -50,7 +50,7 @@ export function AdminDashboardMaximalist() {
       <div className="bg-canvas pb-10">
         {/* Hero poster panel — Open shifts as giant readout */}
         <section className="relative overflow-hidden bg-navy-900 text-white px-5 lg:px-8 pt-7 pb-10">
-          <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 bg-gold-400 rotate-12" />
+          <div className="pointer-events-none absolute -right-12 -bottom-12 h-40 w-40 bg-gold-400/25 rotate-12" />
           <div className="relative grid grid-cols-12 gap-4 items-end">
             <div className="col-span-12 lg:col-span-7">
               <span className="inline-flex bg-gold-400 text-navy-900 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.22em] ring-2 ring-navy-900">
