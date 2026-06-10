@@ -23,7 +23,7 @@ export default function LandingPage() {
       {/* ============ HERO — werkkompasbv.nl copy, editorial Dutch treatment ============ */}
       <section
         id="welkom"
-        className="relative isolate overflow-hidden bg-navy-700 text-white"
+        className="relative isolate overflow-hidden bg-navy-700 text-white lg:h-screen lg:min-h-[640px] flex flex-col"
       >
         <div className="pointer-events-none absolute inset-0 dot-bg opacity-40" />
         <div
@@ -53,29 +53,30 @@ export default function LandingPage() {
           <span className="h-16 w-px bg-white/20" />
         </div>
 
-        <div className="container-app relative pt-28 lg:pt-36 pb-20 lg:pb-28">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
+        <div className="container-app relative flex-1 flex flex-col pt-24 lg:pt-24 pb-10 lg:pb-6">
+          <div className="flex-1 flex flex-col justify-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             <div className="lg:col-span-9 xl:col-span-8">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-gold-400 ring-1 ring-inset ring-gold-400/30">
+              <div className="mb-5 lg:mb-6 inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-gold-400 ring-1 ring-inset ring-gold-400/30">
                 <ShieldCheck size={12} />
                 {t("brandLine")}
               </div>
 
               {/* Big editorial display headline */}
-              <h1 className="font-display font-black tracking-tightest leading-[0.92] text-balance text-[3.25rem] sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem]">
+              <h1 className="font-display font-black tracking-tightest leading-[0.92] text-balance text-[3.25rem] sm:text-7xl lg:text-[5.25rem] xl:text-[6rem]">
                 {t("mk_hero_welcome")}
               </h1>
 
               {/* Gold-accent tagline */}
-              <p className="mt-7 max-w-3xl font-display text-2xl sm:text-3xl lg:text-4xl font-black tracking-tightest text-gold-400 leading-[1.05]">
+              <p className="mt-5 lg:mt-6 max-w-3xl font-display text-2xl sm:text-3xl lg:text-[1.875rem] xl:text-4xl font-black tracking-tightest text-gold-400 leading-[1.05]">
                 {t("mk_hero_tagline")}
               </p>
 
-              <p className="mt-7 max-w-2xl text-base md:text-lg leading-relaxed text-white/75">
+              <p className="mt-5 lg:mt-6 max-w-2xl text-base lg:text-base xl:text-lg leading-relaxed text-white/75">
                 {t("mk_hero_body")}
               </p>
 
-              <div className="mt-10 flex flex-wrap items-center gap-3">
+              <div className="mt-7 lg:mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href="#contact"
                   className="group inline-flex items-center gap-2 rounded-2xl bg-gold-400 px-6 py-3.5 text-sm font-bold text-navy-900 transition hover:bg-gold-300 active:scale-95"
@@ -116,9 +117,10 @@ export default function LandingPage() {
               ))}
             </div>
           </div>
+          </div>
 
           {/* Bottom row: scroll cue + location */}
-          <div className="mt-14 lg:mt-20 flex items-end justify-between border-t border-white/10 pt-6 text-[11px] uppercase tracking-widest text-white/55">
+          <div className="mt-10 lg:mt-8 flex items-end justify-between border-t border-white/10 pt-5 lg:pt-4 text-[11px] uppercase tracking-widest text-white/55">
             <a
               href="#cijfers"
               className="inline-flex items-center gap-2 font-bold hover:text-white/85"
