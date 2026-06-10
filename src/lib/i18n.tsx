@@ -536,6 +536,39 @@ const nl: Dict = {
   mk_foot_terms: "Algemene voorwaarden",
   mk_foot_contact_heading: "Contact",
   mk_foot_copyright: "© 2026 Werkkompas B.V. — Alle rechten voorbehouden.",
+
+  // Hero (werkkompasbv.nl copy)
+  mk_hero_welcome: "Welkom bij Werkkompas B.V.",
+  mk_hero_tagline: "Uw betrouwbare partner in personeel en opdrachten",
+  mk_hero_body:
+    "Werkkompas verbindt werkzoekenden met organisaties in de beveiliging, zorg, transport, logistiek en alle branches. Wij ondersteunen kandidaten in hun zoektocht naar passend werk en organisaties in hun wervingsproces.",
+  mk_hero_cta_primary: "Neem contact met ons op",
+  mk_hero_cta_secondary: "Onze diensten",
+
+  // Sector marquee
+  mk_sectors_label: "Sectoren waarin wij actief zijn",
+
+  // Process
+  mk_process_eyebrow: "Zo werken wij",
+  mk_process_title: "Vier stappen naar de juiste match",
+  mk_process_subtitle:
+    "Van intake tot opvolging — we maken het persoonlijk, snel en transparant.",
+  mk_process_1_label: "Aanmelden",
+  mk_process_1_body:
+    "Een kort intakegesprek met kandidaat of opdrachtgever om de vraag scherp te krijgen.",
+  mk_process_2_label: "Matching",
+  mk_process_2_body:
+    "We koppelen kandidaat en opdracht op basis van branche, certificering en beschikbaarheid.",
+  mk_process_3_label: "Inzet",
+  mk_process_3_body:
+    "Snel en zorgvuldig — vaak binnen 48 uur inzetbaar op locatie.",
+  mk_process_4_label: "Opvolging",
+  mk_process_4_body:
+    "We blijven betrokken en zorgen voor structurele kwaliteit en evaluatie.",
+
+  // Login hub
+  login_hub_title: "Inloggen",
+  login_hub_subtitle: "Kies je rol om verder te gaan met Werkkompas.",
 };
 
 const en: Dict = {
@@ -1020,6 +1053,30 @@ const en: Dict = {
   mk_foot_terms: "Terms of service",
   mk_foot_contact_heading: "Contact",
   mk_foot_copyright: "© 2026 Werkkompas B.V. — All rights reserved.",
+
+  mk_hero_welcome: "Welcome to Werkkompas B.V.",
+  mk_hero_tagline: "Your reliable partner in personnel and assignments",
+  mk_hero_body:
+    "Werkkompas connects job seekers with organisations in security, healthcare, transport, logistics and every sector. We support candidates in their search for the right role and organisations in their recruitment process.",
+  mk_hero_cta_primary: "Get in touch",
+  mk_hero_cta_secondary: "Our services",
+
+  mk_sectors_label: "Sectors we operate in",
+
+  mk_process_eyebrow: "How we work",
+  mk_process_title: "Four steps to the right match",
+  mk_process_subtitle: "From intake to follow-up — personal, fast, transparent.",
+  mk_process_1_label: "Intake",
+  mk_process_1_body: "A short call with candidate or client to sharpen the brief.",
+  mk_process_2_label: "Matching",
+  mk_process_2_body: "We pair candidate and assignment by sector, certification and availability.",
+  mk_process_3_label: "Deployment",
+  mk_process_3_body: "Fast and careful — often deployable on site within 48 hours.",
+  mk_process_4_label: "Follow-up",
+  mk_process_4_body: "We stay close and safeguard quality over time.",
+
+  login_hub_title: "Sign in",
+  login_hub_subtitle: "Pick your role to continue with Werkkompas.",
   login_brand_eyebrow: "Private security · Werkkompas B.V.",
 };
 
@@ -1507,6 +1564,30 @@ const fr: Dict = {
   mk_foot_terms: "Conditions générales",
   mk_foot_contact_heading: "Contact",
   mk_foot_copyright: "© 2026 Werkkompas B.V. — Tous droits réservés.",
+
+  mk_hero_welcome: "Bienvenue chez Werkkompas B.V.",
+  mk_hero_tagline: "Votre partenaire de confiance en personnel et missions",
+  mk_hero_body:
+    "Werkkompas met en relation des candidats avec des organisations dans la sécurité, la santé, le transport, la logistique et tous secteurs. Nous accompagnons les candidats dans leur recherche et les organisations dans leur recrutement.",
+  mk_hero_cta_primary: "Nous contacter",
+  mk_hero_cta_secondary: "Nos services",
+
+  mk_sectors_label: "Secteurs dans lesquels nous opérons",
+
+  mk_process_eyebrow: "Comment nous travaillons",
+  mk_process_title: "Quatre étapes vers le bon match",
+  mk_process_subtitle: "De l'intake au suivi — personnel, rapide, transparent.",
+  mk_process_1_label: "Intake",
+  mk_process_1_body: "Un entretien court avec le candidat ou client pour clarifier la demande.",
+  mk_process_2_label: "Matching",
+  mk_process_2_body: "Nous associons candidat et mission selon secteur, certification et disponibilité.",
+  mk_process_3_label: "Déploiement",
+  mk_process_3_body: "Rapide et soigné — souvent déployable sur site sous 48 heures.",
+  mk_process_4_label: "Suivi",
+  mk_process_4_body: "Nous restons proches et garantissons la qualité dans la durée.",
+
+  login_hub_title: "Connexion",
+  login_hub_subtitle: "Choisissez votre rôle pour continuer avec Werkkompas.",
   login_brand_eyebrow: "Sécurité privée · Werkkompas B.V.",
 };
 
@@ -1994,6 +2075,30 @@ const es: Dict = {
   mk_foot_terms: "Términos de servicio",
   mk_foot_contact_heading: "Contacto",
   mk_foot_copyright: "© 2026 Werkkompas B.V. — Todos los derechos reservados.",
+
+  mk_hero_welcome: "Bienvenido a Werkkompas B.V.",
+  mk_hero_tagline: "Tu socio de confianza en personal y encargos",
+  mk_hero_body:
+    "Werkkompas conecta a buscadores de empleo con organizaciones en seguridad, sanidad, transporte, logística y todos los sectores. Acompañamos a candidatos en su búsqueda y a organizaciones en su selección.",
+  mk_hero_cta_primary: "Contáctanos",
+  mk_hero_cta_secondary: "Nuestros servicios",
+
+  mk_sectors_label: "Sectores en los que operamos",
+
+  mk_process_eyebrow: "Cómo trabajamos",
+  mk_process_title: "Cuatro pasos hacia el match correcto",
+  mk_process_subtitle: "De la entrevista al seguimiento — personal, rápido, transparente.",
+  mk_process_1_label: "Entrevista",
+  mk_process_1_body: "Una llamada breve con candidato o cliente para definir la necesidad.",
+  mk_process_2_label: "Matching",
+  mk_process_2_body: "Emparejamos candidato y encargo por sector, certificación y disponibilidad.",
+  mk_process_3_label: "Despliegue",
+  mk_process_3_body: "Rápido y cuidadoso — a menudo desplegable en sitio en 48 horas.",
+  mk_process_4_label: "Seguimiento",
+  mk_process_4_body: "Nos mantenemos cerca y velamos por la calidad en el tiempo.",
+
+  login_hub_title: "Iniciar sesión",
+  login_hub_subtitle: "Elige tu rol para continuar con Werkkompas.",
   login_brand_eyebrow: "Seguridad privada · Werkkompas B.V.",
 };
 

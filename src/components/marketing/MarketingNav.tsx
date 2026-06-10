@@ -35,6 +35,7 @@ export function MarketingNav() {
           {[
             { href: "#over-ons", label: t("mk_nav_about") },
             { href: "#diensten", label: t("mk_nav_services") },
+            { href: "#aanpak", label: t("mk_process_eyebrow") },
             { href: "#contact", label: t("mk_nav_contact") },
           ].map((it) => (
             <a
@@ -54,7 +55,7 @@ export function MarketingNav() {
         <div className="flex items-center gap-2">
           <LanguageMenu variant={scrolled ? "light" : "dark"} />
           <Link
-            href="/login/admin"
+            href="/login"
             className={cn(
               "inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-bold transition",
               scrolled
