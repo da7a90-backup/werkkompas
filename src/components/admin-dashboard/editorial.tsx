@@ -50,7 +50,7 @@ export function AdminDashboardEditorial() {
       <div className="bg-ivory min-h-screen">
         <div className="px-4 lg:px-8 py-6 lg:py-10 space-y-10 max-w-screen-xl mx-auto">
           {/* Stats — hairline rows */}
-          <section className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-stone-300/60 border-y border-stone-300/60">
+          <section className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-navy-900/15 border-y border-navy-900/15">
             <EditorialStat
               label={t("adm_stat_open_shifts")}
               value={openCount + invitedCount}
@@ -77,9 +77,9 @@ export function AdminDashboardEditorial() {
             <div className="lg:col-span-2 space-y-10 min-w-0">
               {/* Upcoming missions — magazine table */}
               <div>
-                <div className="flex items-end justify-between border-b border-stone-300/60 pb-3 mb-4">
+                <div className="flex items-end justify-between border-b border-navy-900/15 pb-3 mb-4">
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-stone-600">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-gold-600">
                       / {t("adm_upcoming")}
                     </div>
                     <h2 className="mt-1 font-serif text-2xl font-semibold tracking-[-0.02em] text-navy-900">
@@ -93,7 +93,7 @@ export function AdminDashboardEditorial() {
                     {t("adm_all")}
                   </Link>
                 </div>
-                <ul className="divide-y divide-stone-300/60">
+                <ul className="divide-y divide-navy-900/15">
                   {upcoming.map((rawM) => {
                     const m = localizeMission(rawM);
                     const accepted = m.assignments.filter((a) => a.status === "geaccepteerd").length;
@@ -101,16 +101,16 @@ export function AdminDashboardEditorial() {
                       <li key={m.id}>
                         <Link
                           href={`/admin/missions/${m.id}`}
-                          className="group grid grid-cols-12 gap-3 items-center py-5 hover:bg-stone-100/40 -mx-2 px-2"
+                          className="group grid grid-cols-12 gap-3 items-center py-5 hover:bg-gold-400/10 -mx-2 px-2"
                         >
-                          <div className="col-span-2 font-serif italic text-stone-700 text-sm">
+                          <div className="col-span-2 font-serif italic text-navy-900/70 text-sm">
                             {fmt.monthShort(m.startISO)} {new Date(m.startISO).getDate()}
                           </div>
                           <div className="col-span-6 min-w-0">
                             <div className="truncate font-serif text-lg text-navy-900 group-hover:underline underline-offset-4">
                               {m.title}
                             </div>
-                            <div className="truncate text-xs text-stone-600 mt-0.5">
+                            <div className="truncate text-xs text-gold-600 mt-0.5">
                               {m.client} · {m.city} · {fmt.timeRange(m.startISO, m.endISO)}
                             </div>
                           </div>
@@ -123,7 +123,7 @@ export function AdminDashboardEditorial() {
                             >
                               {accepted}/{m.headcount}
                             </div>
-                            <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-stone-600 mt-0.5">
+                            <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-gold-600 mt-0.5">
                               {t("adm_staffed_short")}
                             </div>
                           </div>
@@ -135,22 +135,22 @@ export function AdminDashboardEditorial() {
               </div>
 
               {overCao.length > 0 && (
-                <div className="border-t border-stone-300/60 pt-6">
+                <div className="border-t border-navy-900/15 pt-6">
                   <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-amber-800">
                     / {t("adm_cao_warnings")}
                   </div>
-                  <ul className="mt-4 divide-y divide-stone-300/60">
+                  <ul className="mt-4 divide-y divide-navy-900/15">
                     {overCao.map(({ employee, hours }) => (
                       <li key={employee.id}>
                         <Link
                           href={`/admin/employees/${employee.id}`}
-                          className="group grid grid-cols-12 gap-3 items-center py-4 hover:bg-stone-100/40 -mx-2 px-2"
+                          className="group grid grid-cols-12 gap-3 items-center py-4 hover:bg-gold-400/10 -mx-2 px-2"
                         >
                           <div className="col-span-7 min-w-0">
                             <div className="font-serif text-base text-navy-900 group-hover:underline underline-offset-4">
                               {employee.firstName} {employee.lastName}
                             </div>
-                            <div className="text-xs text-stone-600 mt-0.5 italic font-serif">
+                            <div className="text-xs text-gold-600 mt-0.5 italic font-serif">
                               {t("adm_cao_thisweek", { a: fmt.hours(hours), b: employee.caoMaxHoursPerWeek })}
                             </div>
                           </div>
@@ -175,19 +175,19 @@ export function AdminDashboardEditorial() {
             <aside className="space-y-10 min-w-0">
               {/* Recent activity */}
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-stone-600 border-b border-stone-300/60 pb-3">
+                <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-gold-600 border-b border-navy-900/15 pb-3">
                   / {t("adm_recent")}
                 </div>
                 {recent.length === 0 ? (
-                  <p className="mt-4 font-serif italic text-stone-700">{t("adm_recent_empty")}</p>
+                  <p className="mt-4 font-serif italic text-navy-900/70">{t("adm_recent_empty")}</p>
                 ) : (
-                  <ul className="mt-4 divide-y divide-stone-300/60">
+                  <ul className="mt-4 divide-y divide-navy-900/15">
                     {recent.map((n) => (
                       <li key={n.id} className="py-4">
                         <p className="font-serif text-base text-navy-900 leading-snug">
                           {n.title}
                         </p>
-                        <p className="mt-1 text-xs text-stone-600 italic font-serif">
+                        <p className="mt-1 text-xs text-gold-600 italic font-serif">
                           {n.body} · {fmt.timeAgo(n.createdAt, REFERENCE_TODAY)}
                         </p>
                       </li>
@@ -197,11 +197,11 @@ export function AdminDashboardEditorial() {
               </div>
 
               {/* Quick actions */}
-              <div className="border-t border-stone-300/60 pt-6">
-                <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-stone-600">
+              <div className="border-t border-navy-900/15 pt-6">
+                <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-gold-600">
                   / {t("adm_quick")}
                 </div>
-                <p className="mt-2 font-serif italic text-stone-700 leading-snug">
+                <p className="mt-2 font-serif italic text-navy-900/70 leading-snug">
                   {t("adm_quick_desc")}
                 </p>
                 <ul className="mt-5 space-y-4">
@@ -217,7 +217,7 @@ export function AdminDashboardEditorial() {
                   <li>
                     <Link
                       href="/admin/planning"
-                      className="group flex items-center justify-between border-b border-stone-300/60 pb-2 text-navy-900"
+                      className="group flex items-center justify-between border-b border-navy-900/15 pb-2 text-navy-900"
                     >
                       <span className="font-serif text-lg">{t("adm_quick_planning")}</span>
                       <ArrowRight size={16} className="transition group-hover:translate-x-0.5" />
@@ -226,7 +226,7 @@ export function AdminDashboardEditorial() {
                   <li>
                     <Link
                       href="/admin/employees"
-                      className="group flex items-center justify-between border-b border-stone-300/60 pb-2 text-navy-900"
+                      className="group flex items-center justify-between border-b border-navy-900/15 pb-2 text-navy-900"
                     >
                       <span className="font-serif text-lg">{t("adm_quick_employees")}</span>
                       <ArrowRight size={16} className="transition group-hover:translate-x-0.5" />
@@ -253,14 +253,14 @@ function EditorialStat({
 }) {
   return (
     <div className="bg-ivory p-5">
-      <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-stone-600">
+      <div className="text-[10px] font-bold uppercase tracking-[0.32em] text-gold-600">
         {label}
       </div>
       <div className="mt-3 font-serif text-4xl font-semibold tracking-[-0.02em] text-navy-900 tabular">
         {value}
       </div>
       {hint && (
-        <div className="mt-1 text-xs text-stone-600 italic font-serif">{hint}</div>
+        <div className="mt-1 text-xs text-gold-600 italic font-serif">{hint}</div>
       )}
     </div>
   );
