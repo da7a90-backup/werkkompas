@@ -4,24 +4,24 @@
     <circle r="170" fill="none" stroke="#ffffff" stroke-width="14" opacity="0.85"/>
 
     <!-- Intercardinal short spikes -->
-    <polygon points="70,-70 0,0 26,0" fill="#a07b30"/>
-    <polygon points="70,-70 0,0 0,-26" fill="#FDDC5C"/>
-    <polygon points="-70,-70 0,0 0,-26" fill="#a07b30"/>
-    <polygon points="-70,-70 0,0 -26,0" fill="#FDDC5C"/>
-    <polygon points="70,70 0,0 0,26" fill="#a07b30"/>
-    <polygon points="70,70 0,0 26,0" fill="#FDDC5C"/>
-    <polygon points="-70,70 0,0 -26,0" fill="#a07b30"/>
-    <polygon points="-70,70 0,0 0,26" fill="#FDDC5C"/>
+    <polygon points="70,-70 0,0 26,0" fill="#997703"/>
+    <polygon points="70,-70 0,0 0,-26" fill="#EFBF04"/>
+    <polygon points="-70,-70 0,0 0,-26" fill="#997703"/>
+    <polygon points="-70,-70 0,0 -26,0" fill="#EFBF04"/>
+    <polygon points="70,70 0,0 0,26" fill="#997703"/>
+    <polygon points="70,70 0,0 26,0" fill="#EFBF04"/>
+    <polygon points="-70,70 0,0 -26,0" fill="#997703"/>
+    <polygon points="-70,70 0,0 0,26" fill="#EFBF04"/>
 
     <!-- Cardinal long points -->
-    <polygon points="0,-150 -26,0 0,0" fill="#FDDC5C"/>
-    <polygon points="0,-150 26,0 0,0" fill="#a07b30"/>
-    <polygon points="150,0 0,-26 0,0" fill="#FDDC5C"/>
-    <polygon points="150,0 0,26 0,0" fill="#a07b30"/>
-    <polygon points="0,150 26,0 0,0" fill="#FDDC5C"/>
-    <polygon points="0,150 -26,0 0,0" fill="#a07b30"/>
-    <polygon points="-150,0 0,26 0,0" fill="#FDDC5C"/>
-    <polygon points="-150,0 0,-26 0,0" fill="#a07b30"/>
+    <polygon points="0,-150 -26,0 0,0" fill="#EFBF04"/>
+    <polygon points="0,-150 26,0 0,0" fill="#997703"/>
+    <polygon points="150,0 0,-26 0,0" fill="#EFBF04"/>
+    <polygon points="150,0 0,26 0,0" fill="#997703"/>
+    <polygon points="0,150 26,0 0,0" fill="#EFBF04"/>
+    <polygon points="0,150 -26,0 0,0" fill="#997703"/>
+    <polygon points="-150,0 0,26 0,0" fill="#EFBF04"/>
+    <polygon points="-150,0 0,-26 0,0" fill="#997703"/>
 
     <circle r="17" fill="#ffffff"/>
     <circle r="6" fill="#1a2f47"/>

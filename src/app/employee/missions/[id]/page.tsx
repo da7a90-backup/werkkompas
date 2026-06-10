@@ -74,7 +74,7 @@ export default function EmployeeMissionDetailPage() {
           className="absolute -right-12 -top-12 h-56 w-56 rounded-full"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(253,220,92,0.32), rgba(253,220,92,0))",
+              "radial-gradient(closest-side, rgba(239,191,4,0.32), rgba(239,191,4,0))",
           }}
         />
         <div className="relative container-mobile flex h-14 items-center gap-2">

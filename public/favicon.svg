@@ -2,22 +2,22 @@
   <rect width="64" height="64" rx="12" fill="#1a2f47"/>
   <g transform="translate(32 32)">
     <circle r="22" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.85"/>
-    <polygon points="9,-9 0,0 3,0" fill="#a07b30"/>
-    <polygon points="9,-9 0,0 0,-3" fill="#FDDC5C"/>
-    <polygon points="-9,-9 0,0 0,-3" fill="#a07b30"/>
-    <polygon points="-9,-9 0,0 -3,0" fill="#FDDC5C"/>
-    <polygon points="9,9 0,0 0,3" fill="#a07b30"/>
-    <polygon points="9,9 0,0 3,0" fill="#FDDC5C"/>
-    <polygon points="-9,9 0,0 -3,0" fill="#a07b30"/>
-    <polygon points="-9,9 0,0 0,3" fill="#FDDC5C"/>
-    <polygon points="0,-21 -4,0 0,0" fill="#FDDC5C"/>
-    <polygon points="0,-21 4,0 0,0" fill="#a07b30"/>
-    <polygon points="21,0 0,-4 0,0" fill="#FDDC5C"/>
-    <polygon points="21,0 0,4 0,0" fill="#a07b30"/>
-    <polygon points="0,21 4,0 0,0" fill="#FDDC5C"/>
-    <polygon points="0,21 -4,0 0,0" fill="#a07b30"/>
-    <polygon points="-21,0 0,4 0,0" fill="#FDDC5C"/>
-    <polygon points="-21,0 0,-4 0,0" fill="#a07b30"/>
+    <polygon points="9,-9 0,0 3,0" fill="#997703"/>
+    <polygon points="9,-9 0,0 0,-3" fill="#EFBF04"/>
+    <polygon points="-9,-9 0,0 0,-3" fill="#997703"/>
+    <polygon points="-9,-9 0,0 -3,0" fill="#EFBF04"/>
+    <polygon points="9,9 0,0 0,3" fill="#997703"/>
+    <polygon points="9,9 0,0 3,0" fill="#EFBF04"/>
+    <polygon points="-9,9 0,0 -3,0" fill="#997703"/>
+    <polygon points="-9,9 0,0 0,3" fill="#EFBF04"/>
+    <polygon points="0,-21 -4,0 0,0" fill="#EFBF04"/>
+    <polygon points="0,-21 4,0 0,0" fill="#997703"/>
+    <polygon points="21,0 0,-4 0,0" fill="#EFBF04"/>
+    <polygon points="21,0 0,4 0,0" fill="#997703"/>
+    <polygon points="0,21 4,0 0,0" fill="#EFBF04"/>
+    <polygon points="0,21 -4,0 0,0" fill="#997703"/>
+    <polygon points="-21,0 0,4 0,0" fill="#EFBF04"/>
+    <polygon points="-21,0 0,-4 0,0" fill="#997703"/>
     <circle r="2.4" fill="#ffffff"/>
     <circle r="0.9" fill="#1a2f47"/>
   </g>

@@ -20,8 +20,8 @@ export function Logo({
 }: Props) {
   const isLight = variant === "light";
   const ring = isLight ? "#ffffff" : "#1a2f47";
-  const goldLight = "#FDDC5C";
-  const goldDark = "#a07b30";
+  const goldLight = "#EFBF04";
+  const goldDark = "#997703";
   const center = isLight ? "#ffffff" : "#1a2f47";
   const centerDot = isLight ? "#1a2f47" : "#1a2f47";
 

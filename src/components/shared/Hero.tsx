@@ -15,7 +15,7 @@ export function Hero({ eyebrow, title, description, children, className }: Props
       <div
         className="absolute -right-12 -top-12 h-48 w-48 rounded-full"
         style={{
-          background: "radial-gradient(closest-side, rgba(253,220,92,0.35), rgba(253,220,92,0))",
+          background: "radial-gradient(closest-side, rgba(239,191,4,0.35), rgba(239,191,4,0))",
         }}
       />
       <div className="relative">
