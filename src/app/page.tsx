@@ -46,14 +46,14 @@ export default function LandingPage() {
         className="pointer-events-none absolute -right-32 -top-32 h-[480px] w-[480px] rounded-full"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(215,186,29,0.22), rgba(215,186,29,0))",
+            "radial-gradient(closest-side, rgba(184,146,74,0.22), rgba(184,146,74,0))",
         }}
       />
       <div
         className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(0,93,170,0.45), rgba(0,93,170,0))",
+            "radial-gradient(closest-side, rgba(46,72,98,0.45), rgba(46,72,98,0))",
         }}
       />
 

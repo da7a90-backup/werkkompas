@@ -15,6 +15,11 @@ interface Props {
   showStatus?: boolean;
   variant?: "default" | "compact" | "highlight";
   rightSlot?: React.ReactNode;
+  /**
+   * When true, hide the team staffing count (e.g. "2/6").
+   * Set on employee-facing pages so guards never see colleagues' assignments.
+   */
+  hideStaffing?: boolean;
 }
 
 export function MissionCard({
@@ -24,6 +29,7 @@ export function MissionCard({
   showStatus = true,
   variant = "default",
   rightSlot,
+  hideStaffing = false,
 }: Props) {
   const { mission: localize, cert } = useLocalized();
   const mission = localize(rawMission);
@@ -78,10 +84,12 @@ export function MissionCard({
                 <Banknote size={12} className="text-navy-700/70" />
                 {fmt.euro(mission.hourlyRate)}/h
               </span>
-              <span className="inline-flex items-center gap-1">
-                <Users size={12} className="text-navy-700/70" />
-                {accepted}/{mission.headcount}
-              </span>
+              {!hideStaffing && (
+                <span className="inline-flex items-center gap-1">
+                  <Users size={12} className="text-navy-700/70" />
+                  {accepted}/{mission.headcount}
+                </span>
+              )}
             </div>
             {variant !== "compact" && (
               <div className="mt-2.5 flex items-center justify-between gap-2">

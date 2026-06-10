@@ -97,6 +97,7 @@ export default function EmployeeMissionsPage() {
                 href={`/employee/missions/${m.id}`}
                 variant={tab === "uitnodigingen" ? "highlight" : "default"}
                 showStatus={false}
+                hideStaffing
               />
             ))}
           </div>

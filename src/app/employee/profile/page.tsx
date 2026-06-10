@@ -59,7 +59,7 @@ export default function EmployeeProfilePage() {
             className="absolute -right-12 -top-12 h-56 w-56 rounded-full"
             style={{
               background:
-                "radial-gradient(closest-side, rgba(215,186,29,0.3), rgba(215,186,29,0))",
+                "radial-gradient(closest-side, rgba(184,146,74,0.3), rgba(184,146,74,0))",
             }}
           />
         </div>

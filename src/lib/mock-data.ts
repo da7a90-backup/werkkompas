@@ -7,14 +7,14 @@ import type {
 } from "@/types";
 
 const AVATAR_COLORS = [
-  "#002F5C",
-  "#005DAA",
-  "#83700d",
-  "#d7ba1d",
-  "#1a7ec9",
-  "#7a5d10",
-  "#1c4684",
-  "#b29714",
+  "#1a2f47",
+  "#2e4862",
+  "#5e4825",
+  "#b8924a",
+  "#4b6889",
+  "#7d5f2d",
+  "#223851",
+  "#9c7a3a",
 ];
 
 const initials = (first: string, last: string) =>

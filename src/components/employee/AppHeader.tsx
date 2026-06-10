@@ -62,7 +62,7 @@ export function AppHeader({ variant = "home", title, showSwitch, className }: Pr
           className="absolute -right-16 -top-16 h-56 w-56 rounded-full"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(215,186,29,0.35), rgba(215,186,29,0))",
+              "radial-gradient(closest-side, rgba(184,146,74,0.35), rgba(184,146,74,0))",
           }}
         />
       </div>
@@ -70,7 +70,7 @@ export function AppHeader({ variant = "home", title, showSwitch, className }: Pr
         <Link href="/employee" className="flex items-center gap-3">
           <Avatar
             initials={employee?.initials ?? "WK"}
-            color={employee?.avatarColor ?? "#005DAA"}
+            color={employee?.avatarColor ?? "#2e4862"}
             size="sm"
             ring
           />

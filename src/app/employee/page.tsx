@@ -213,6 +213,7 @@ export default function EmployeeHome() {
                   href={`/employee/missions/${m.id}`}
                   variant="highlight"
                   showStatus={false}
+                  hideStaffing
                 />
               ))}
             </div>
@@ -300,6 +301,7 @@ export default function EmployeeHome() {
                   mission={m}
                   href={`/employee/missions/${m.id}`}
                   showStatus={false}
+                  hideStaffing
                 />
               ))}
             </div>

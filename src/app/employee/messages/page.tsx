@@ -54,7 +54,7 @@ export default function EmployeeMessagesPage() {
       <div className="flex-1 flex flex-col min-h-0">
         <div className="border-b border-line bg-white px-5 py-3 flex items-center gap-3">
           <div className="relative">
-            <Avatar initials="WP" color="#002F5C" />
+            <Avatar initials="WP" color="#1a2f47" />
             <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-white" />
           </div>
           <div className="flex-1">

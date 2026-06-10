@@ -14,7 +14,6 @@ import {
   FileText,
   MapPin,
   ShieldCheck,
-  Users,
   X,
 } from "lucide-react";
 import { AppHeader } from "@/components/employee/AppHeader";
@@ -52,10 +51,6 @@ export default function EmployeeMissionDetailPage() {
 
   const myAssignment = mission.assignments.find((a) => a.employeeId === empId);
   const isInvited = mission.invitedEmployeeIds.includes(empId);
-  const acceptedCount = mission.assignments.filter(
-    (a) => a.status === "geaccepteerd"
-  ).length;
-  const isFull = acceptedCount >= mission.headcount && myAssignment?.status !== "geaccepteerd";
   const cao = checkCaoConflict(empId, mission.id);
   const totalHours = hoursBetween(mission.startISO, mission.endISO);
   const totalPay = totalHours * mission.hourlyRate;
@@ -79,7 +74,7 @@ export default function EmployeeMissionDetailPage() {
           className="absolute -right-12 -top-12 h-56 w-56 rounded-full"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(215,186,29,0.32), rgba(215,186,29,0))",
+              "radial-gradient(closest-side, rgba(184,146,74,0.32), rgba(184,146,74,0))",
           }}
         />
         <div className="relative container-mobile flex h-14 items-center gap-2">
@@ -163,12 +158,12 @@ export default function EmployeeMissionDetailPage() {
               </div>
             </div>
             <div className="p-3 text-center">
-              <Users size={14} className="mx-auto text-navy-700/70" />
+              <Banknote size={14} className="mx-auto text-navy-700/70" />
               <div className="mt-1 text-[10px] font-bold uppercase tracking-widest text-ink/50">
-                {t("adm_field_staffing")}
+                {t("e_label_earnings")}
               </div>
               <div className="font-display text-sm font-black text-navy-900 tabular">
-                {acceptedCount}/{mission.headcount}
+                {fmt.euro(totalPay)}
               </div>
             </div>
           </div>
@@ -295,10 +290,6 @@ export default function EmployeeMissionDetailPage() {
                 >
                   {t("e_change_mind")}
                 </Button>
-              </div>
-            ) : isFull ? (
-              <div className="rounded-2xl bg-canvas px-4 py-3 text-center text-sm text-ink/65">
-                {t("e_already_full")}
               </div>
             ) : (
               <div className="flex items-center gap-2">

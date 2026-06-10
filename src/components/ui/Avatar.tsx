@@ -18,7 +18,7 @@ const sizes = {
 
 export function Avatar({
   initials,
-  color = "#002F5C",
+  color = "#1a2f47",
   size = "md",
   className,
   ring,

@@ -41,11 +41,11 @@
     height: 10px;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 47, 92, 0.16);
+    background: rgba(26, 47, 71, 0.16);
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 47, 92, 0.28);
+    background: rgba(26, 47, 71, 0.28);
   }
   ::-webkit-scrollbar-track {
     background: transparent;
@@ -122,6 +122,6 @@
 
 /* selection */
 ::selection {
-  background: rgba(215, 186, 29, 0.35);
+  background: rgba(184, 146, 74, 0.35);
   color: #151515;
 }
