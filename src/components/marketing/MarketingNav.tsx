@@ -13,12 +13,19 @@ export function MarketingNav() {
   const { t } = useT();
   const { variant } = useLayout();
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
+    const onResize = () => setIsMobile(window.innerWidth < 640);
     onScroll();
+    onResize();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   // Editorial hero is ivory (light) — needs dark chrome at top of page.
@@ -39,9 +46,12 @@ export function MarketingNav() {
         headerBg
       )}
     >
-      <div className="container-app flex h-16 items-center justify-between gap-3">
-        <a href="#welkom" className="flex items-center">
-          <Logo height={scrolled ? 36 : 40} variant={onDark ? "light" : "dark"} />
+      <div className="container-app flex h-16 items-center justify-between gap-2 sm:gap-3">
+        <a href="#welkom" className="flex shrink-0 items-center">
+          <Logo
+            height={isMobile ? 28 : scrolled ? 36 : 40}
+            variant={onDark ? "light" : "dark"}
+          />
         </a>
         <nav className="hidden md:flex items-center gap-1">
           {[
@@ -63,7 +73,7 @@ export function MarketingNav() {
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <LanguageMenu variant={onDark ? "dark" : "light"} />
           <LayoutMenu variant={onDark ? "dark" : "light"} />
           <Link

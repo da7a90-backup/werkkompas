@@ -33,8 +33,8 @@ export function Logo({
       width={width}
       height={height}
       priority
-      className={cn("shrink-0 block w-auto", className)}
-      style={{ height, width: "auto" }}
+      className={cn("shrink-0 block", className)}
+      style={{ height: `${height}px`, width: `${width}px` }}
     />
   );
 }

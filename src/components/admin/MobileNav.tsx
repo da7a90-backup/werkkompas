@@ -38,9 +38,11 @@ export function AdminMobileNav() {
           paddingTop: "max(env(safe-area-inset-top), 1.75rem)",
         }}
       >
-        <div className="flex h-14 items-center justify-between border-b border-line bg-white px-4">
-          <Logo height={32} />
-          <div className="flex items-center gap-2">
+        <div className="flex h-14 items-center justify-between gap-2 border-b border-line bg-white px-4">
+          <div className="shrink-0">
+            <Logo height={28} />
+          </div>
+          <div className="flex shrink-0 items-center gap-1.5">
             <LanguageMenu variant="light" />
             <LayoutMenu variant="light" />
             <button
