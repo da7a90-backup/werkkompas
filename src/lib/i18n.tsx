@@ -452,6 +452,10 @@ const nl: Dict = {
   login_emp_search: "Zoek je naam…",
   login_emp_count: "{n} profielen beschikbaar",
   login_switch_to_admin: "Plan je de diensten? Inloggen als planner →",
+  login_emp_demo_chip: "Demo · inloggen als",
+  login_emp_demo_pick: "Kies een profiel",
+  login_emp_demo_hint: "Demo-omgeving — kies een profiel om automatisch in te loggen.",
+  login_emp_full_subtitle: "Log in op de Werkkompas medewerker-app.",
   login_brand_eyebrow: "Particuliere beveiliging · Werkkompas B.V.",
 };
 
@@ -859,6 +863,10 @@ const en: Dict = {
   login_emp_search: "Search your name…",
   login_emp_count: "{n} profiles available",
   login_switch_to_admin: "Planning the shifts? Sign in as planner →",
+  login_emp_demo_chip: "Demo · sign in as",
+  login_emp_demo_pick: "Pick a profile",
+  login_emp_demo_hint: "Demo environment — pick a profile to auto-fill the credentials.",
+  login_emp_full_subtitle: "Sign in to the Werkkompas employee app.",
   login_brand_eyebrow: "Private security · Werkkompas B.V.",
 };
 
@@ -1268,6 +1276,10 @@ const fr: Dict = {
   login_emp_search: "Cherche ton nom…",
   login_emp_count: "{n} profils disponibles",
   login_switch_to_admin: "Vous planifiez les missions ? Connexion comme planificateur →",
+  login_emp_demo_chip: "Démo · connexion en tant que",
+  login_emp_demo_pick: "Choisir un profil",
+  login_emp_demo_hint: "Environnement démo — choisis un profil pour pré-remplir les identifiants.",
+  login_emp_full_subtitle: "Connectez-vous à l'app agent Werkkompas.",
   login_brand_eyebrow: "Sécurité privée · Werkkompas B.V.",
 };
 
@@ -1677,6 +1689,10 @@ const es: Dict = {
   login_emp_search: "Busca tu nombre…",
   login_emp_count: "{n} perfiles disponibles",
   login_switch_to_admin: "¿Tú planificas? Inicia sesión como planificador →",
+  login_emp_demo_chip: "Demo · inicia sesión como",
+  login_emp_demo_pick: "Elige un perfil",
+  login_emp_demo_hint: "Entorno demo — elige un perfil para autocompletar las credenciales.",
+  login_emp_full_subtitle: "Inicia sesión en la app de vigilante Werkkompas.",
   login_brand_eyebrow: "Seguridad privada · Werkkompas B.V.",
 };
 
