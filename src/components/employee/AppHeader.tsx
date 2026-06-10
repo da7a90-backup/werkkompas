@@ -62,7 +62,7 @@ export function AppHeader({ variant = "home", title, showSwitch, className }: Pr
           className="absolute -right-16 -top-16 h-56 w-56 rounded-full"
           style={{
             background:
-              "radial-gradient(closest-side, rgba(184,146,74,0.35), rgba(184,146,74,0))",
+              "radial-gradient(closest-side, rgba(253,220,92,0.35), rgba(253,220,92,0))",
           }}
         />
       </div>

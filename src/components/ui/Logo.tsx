@@ -9,8 +9,8 @@ interface Props {
 
 /**
  * Werkkompas compass-rose mark.
- * - "dark" variant = navy/gold on a light surface (in-app default).
- * - "light" variant = white/gold on a dark surface (e.g. navy hero).
+ * - "dark"  → for light surfaces (navy ring + gold star + navy centre).
+ * - "light" → for dark surfaces (white ring + gold star + white centre).
  */
 export function Logo({
   size = 32,
@@ -20,9 +20,10 @@ export function Logo({
 }: Props) {
   const isLight = variant === "light";
   const ring = isLight ? "#ffffff" : "#1a2f47";
-  const goldLight = "#cfa971";
-  const goldDark = "#8c6d35";
+  const goldLight = "#FDDC5C";
+  const goldDark = "#a07b30";
   const center = isLight ? "#ffffff" : "#1a2f47";
+  const centerDot = isLight ? "#1a2f47" : "#1a2f47";
 
   return (
     <div className={cn("inline-flex items-center gap-3", className)}>
@@ -38,38 +39,44 @@ export function Logo({
         <circle
           cx="32"
           cy="32"
-          r="26"
+          r="25"
           fill="none"
           stroke={ring}
           strokeWidth="2.5"
         />
 
-        {/* Compass rose star */}
         <g transform="translate(32 32)">
-          {/* Diagonal (intercardinal) points — drawn first so cardinals overlap on top */}
-          <polygon points="9,-9 0,-3 0,0 3,0" fill={goldDark} />
-          <polygon points="-9,-9 0,-3 0,0 -3,0" fill={goldLight} />
-          <polygon points="9,9 3,0 0,0 0,3" fill={goldLight} />
-          <polygon points="-9,9 -3,0 0,0 0,3" fill={goldDark} />
+          {/* Diagonal (intercardinal) spikes — short, drawn under the cardinals */}
+          {/* NE */}
+          <polygon points="11,-11 0,0 4,0" fill={goldDark} />
+          <polygon points="11,-11 0,0 0,-4" fill={goldLight} />
+          {/* NW */}
+          <polygon points="-11,-11 0,0 0,-4" fill={goldDark} />
+          <polygon points="-11,-11 0,0 -4,0" fill={goldLight} />
+          {/* SE */}
+          <polygon points="11,11 0,0 0,4" fill={goldDark} />
+          <polygon points="11,11 0,0 4,0" fill={goldLight} />
+          {/* SW */}
+          <polygon points="-11,11 0,0 -4,0" fill={goldDark} />
+          <polygon points="-11,11 0,0 0,4" fill={goldLight} />
 
-          {/* North */}
-          <polygon points="0,-24 -4,0 0,0" fill={goldLight} />
-          <polygon points="0,-24 4,0 0,0" fill={goldDark} />
+          {/* Cardinal points — long, with light + shadow halves */}
+          {/* N */}
+          <polygon points="0,-23 -4,0 0,0" fill={goldLight} />
+          <polygon points="0,-23 4,0 0,0" fill={goldDark} />
+          {/* E */}
+          <polygon points="23,0 0,-4 0,0" fill={goldLight} />
+          <polygon points="23,0 0,4 0,0" fill={goldDark} />
+          {/* S */}
+          <polygon points="0,23 4,0 0,0" fill={goldLight} />
+          <polygon points="0,23 -4,0 0,0" fill={goldDark} />
+          {/* W */}
+          <polygon points="-23,0 0,4 0,0" fill={goldLight} />
+          <polygon points="-23,0 0,-4 0,0" fill={goldDark} />
 
-          {/* East */}
-          <polygon points="24,0 0,-4 0,0" fill={goldLight} />
-          <polygon points="24,0 0,4 0,0" fill={goldDark} />
-
-          {/* South */}
-          <polygon points="0,24 4,0 0,0" fill={goldLight} />
-          <polygon points="0,24 -4,0 0,0" fill={goldDark} />
-
-          {/* West */}
-          <polygon points="-24,0 0,4 0,0" fill={goldLight} />
-          <polygon points="-24,0 0,-4 0,0" fill={goldDark} />
-
-          {/* Center pivot */}
-          <circle r="2.6" fill={center} />
+          {/* Centre pivot */}
+          <circle r="2.4" fill={center} />
+          {!isLight && <circle r="1" fill={centerDot} />}
         </g>
       </svg>
       {showWordmark && (

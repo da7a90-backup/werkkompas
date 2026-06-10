@@ -46,7 +46,7 @@ export default function LandingPage() {
         className="pointer-events-none absolute -right-32 -top-32 h-[480px] w-[480px] rounded-full"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(184,146,74,0.22), rgba(184,146,74,0))",
+            "radial-gradient(closest-side, rgba(253,220,92,0.22), rgba(253,220,92,0))",
         }}
       />
       <div

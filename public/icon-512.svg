@@ -3,30 +3,28 @@
   <g transform="translate(256 256)">
     <circle r="170" fill="none" stroke="#ffffff" stroke-width="14" opacity="0.85"/>
 
-    <!-- Intercardinal (short) points -->
-    <polygon points="60,-60 0,-22 0,0 22,0" fill="#8c6d35"/>
-    <polygon points="-60,-60 0,-22 0,0 -22,0" fill="#cfa971"/>
-    <polygon points="60,60 22,0 0,0 0,22" fill="#cfa971"/>
-    <polygon points="-60,60 -22,0 0,0 0,22" fill="#8c6d35"/>
+    <!-- Intercardinal short spikes -->
+    <polygon points="70,-70 0,0 26,0" fill="#a07b30"/>
+    <polygon points="70,-70 0,0 0,-26" fill="#FDDC5C"/>
+    <polygon points="-70,-70 0,0 0,-26" fill="#a07b30"/>
+    <polygon points="-70,-70 0,0 -26,0" fill="#FDDC5C"/>
+    <polygon points="70,70 0,0 0,26" fill="#a07b30"/>
+    <polygon points="70,70 0,0 26,0" fill="#FDDC5C"/>
+    <polygon points="-70,70 0,0 -26,0" fill="#a07b30"/>
+    <polygon points="-70,70 0,0 0,26" fill="#FDDC5C"/>
 
-    <!-- North -->
-    <polygon points="0,-160 -28,0 0,0" fill="#cfa971"/>
-    <polygon points="0,-160 28,0 0,0" fill="#8c6d35"/>
+    <!-- Cardinal long points -->
+    <polygon points="0,-150 -26,0 0,0" fill="#FDDC5C"/>
+    <polygon points="0,-150 26,0 0,0" fill="#a07b30"/>
+    <polygon points="150,0 0,-26 0,0" fill="#FDDC5C"/>
+    <polygon points="150,0 0,26 0,0" fill="#a07b30"/>
+    <polygon points="0,150 26,0 0,0" fill="#FDDC5C"/>
+    <polygon points="0,150 -26,0 0,0" fill="#a07b30"/>
+    <polygon points="-150,0 0,26 0,0" fill="#FDDC5C"/>
+    <polygon points="-150,0 0,-26 0,0" fill="#a07b30"/>
 
-    <!-- East -->
-    <polygon points="160,0 0,-28 0,0" fill="#cfa971"/>
-    <polygon points="160,0 0,28 0,0" fill="#8c6d35"/>
-
-    <!-- South -->
-    <polygon points="0,160 28,0 0,0" fill="#cfa971"/>
-    <polygon points="0,160 -28,0 0,0" fill="#8c6d35"/>
-
-    <!-- West -->
-    <polygon points="-160,0 0,28 0,0" fill="#cfa971"/>
-    <polygon points="-160,0 0,-28 0,0" fill="#8c6d35"/>
-
-    <circle r="18" fill="#ffffff"/>
+    <circle r="17" fill="#ffffff"/>
     <circle r="6" fill="#1a2f47"/>
   </g>
-  <text x="256" y="470" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="40" fill="#ffffff" letter-spacing="-1">WERKKOMPAS</text>
+  <text x="256" y="468" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="40" fill="#ffffff" letter-spacing="-1">WERKKOMPAS</text>
 </svg>

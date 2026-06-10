@@ -86,7 +86,7 @@ export default function AdminEmployeeDetailPage() {
                 className="absolute -right-12 -top-12 h-56 w-56 rounded-full"
                 style={{
                   background:
-                    "radial-gradient(closest-side, rgba(184,146,74,0.32), rgba(184,146,74,0))",
+                    "radial-gradient(closest-side, rgba(253,220,92,0.32), rgba(253,220,92,0))",
                 }}
               />
               <div className="relative flex items-center gap-5">
