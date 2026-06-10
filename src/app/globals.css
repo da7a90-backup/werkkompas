@@ -10,6 +10,11 @@
     --safe-right: env(safe-area-inset-right);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
   html,
   body {
     @apply bg-canvas text-ink antialiased;
