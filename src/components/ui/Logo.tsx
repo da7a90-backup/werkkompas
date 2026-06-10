@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -8,9 +9,9 @@ interface Props {
 }
 
 /**
- * Werkkompas compass-rose mark.
- * - "dark"  → for light surfaces (navy ring + gold star + navy centre).
- * - "light" → for dark surfaces (white ring + gold star + white centre).
+ * Werkkompas brand mark — renders the real logo PNG asset.
+ * - "dark"  → for light surfaces (navy ring + gold star).
+ * - "light" → for dark surfaces (white ring + gold star).
  */
 export function Logo({
   size = 32,
@@ -19,66 +20,19 @@ export function Logo({
   showWordmark = false,
 }: Props) {
   const isLight = variant === "light";
-  const ring = isLight ? "#ffffff" : "#1a2f47";
-  const goldLight = "#EFBF04";
-  const goldDark = "#997703";
-  const center = isLight ? "#ffffff" : "#1a2f47";
-  const centerDot = isLight ? "#1a2f47" : "#1a2f47";
+  const src = isLight ? "/werkkompas-mark-light.png" : "/werkkompas-mark.png";
 
   return (
     <div className={cn("inline-flex items-center gap-3", className)}>
-      <svg
-        viewBox="0 0 64 64"
+      <Image
+        src={src}
+        alt="Werkkompas"
         width={size}
         height={size}
-        className="shrink-0"
-        style={{ display: "block" }}
-        aria-hidden="true"
-      >
-        {/* Outer ring */}
-        <circle
-          cx="32"
-          cy="32"
-          r="25"
-          fill="none"
-          stroke={ring}
-          strokeWidth="2.5"
-        />
-
-        <g transform="translate(32 32)">
-          {/* Diagonal (intercardinal) spikes — short, drawn under the cardinals */}
-          {/* NE */}
-          <polygon points="11,-11 0,0 4,0" fill={goldDark} />
-          <polygon points="11,-11 0,0 0,-4" fill={goldLight} />
-          {/* NW */}
-          <polygon points="-11,-11 0,0 0,-4" fill={goldDark} />
-          <polygon points="-11,-11 0,0 -4,0" fill={goldLight} />
-          {/* SE */}
-          <polygon points="11,11 0,0 0,4" fill={goldDark} />
-          <polygon points="11,11 0,0 4,0" fill={goldLight} />
-          {/* SW */}
-          <polygon points="-11,11 0,0 -4,0" fill={goldDark} />
-          <polygon points="-11,11 0,0 0,4" fill={goldLight} />
-
-          {/* Cardinal points — long, with light + shadow halves */}
-          {/* N */}
-          <polygon points="0,-23 -4,0 0,0" fill={goldLight} />
-          <polygon points="0,-23 4,0 0,0" fill={goldDark} />
-          {/* E */}
-          <polygon points="23,0 0,-4 0,0" fill={goldLight} />
-          <polygon points="23,0 0,4 0,0" fill={goldDark} />
-          {/* S */}
-          <polygon points="0,23 4,0 0,0" fill={goldLight} />
-          <polygon points="0,23 -4,0 0,0" fill={goldDark} />
-          {/* W */}
-          <polygon points="-23,0 0,4 0,0" fill={goldLight} />
-          <polygon points="-23,0 0,-4 0,0" fill={goldDark} />
-
-          {/* Centre pivot */}
-          <circle r="2.4" fill={center} />
-          {!isLight && <circle r="1" fill={centerDot} />}
-        </g>
-      </svg>
+        priority={size >= 32}
+        className="shrink-0 block"
+        style={{ width: size, height: size }}
+      />
       {showWordmark && (
         <span
           className={cn(
