@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, ChevronDown, MapPin, ShieldCheck } from "lucide-react";
+import { ArrowRight, ChevronDown, ShieldCheck } from "lucide-react";
 import { useT } from "@/lib/i18n";
 
 import { MarketingNav } from "@/components/marketing/MarketingNav";
@@ -9,7 +8,6 @@ import { SectorMarquee } from "@/components/marketing/SectorMarquee";
 import { StatsStrip } from "@/components/marketing/StatsStrip";
 import { AboutSection } from "@/components/marketing/AboutSection";
 import { ServicesSection } from "@/components/marketing/ServicesSection";
-import { ProcessSection } from "@/components/marketing/ProcessSection";
 import { ContactSection } from "@/components/marketing/ContactSection";
 import { MarketingFooter } from "@/components/marketing/MarketingFooter";
 
@@ -40,18 +38,6 @@ export default function LandingPage() {
               "radial-gradient(closest-side, rgba(46,72,98,0.45), rgba(46,72,98,0))",
           }}
         />
-
-        {/* Vertical brand rail (Dutch editorial element) */}
-        <div className="pointer-events-none absolute left-6 top-1/2 hidden lg:flex -translate-y-1/2 flex-col items-center gap-3">
-          <span className="h-16 w-px bg-white/20" />
-          <span
-            className="text-[10px] font-bold uppercase tracking-[0.32em] text-white/45"
-            style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-          >
-            EST. 2019 · ROTTERDAM
-          </span>
-          <span className="h-16 w-px bg-white/20" />
-        </div>
 
         <div className="container-app relative flex-1 flex flex-col pt-24 lg:pt-24 pb-10 lg:pb-6">
           <div className="flex-1 flex flex-col justify-center">
@@ -119,8 +105,8 @@ export default function LandingPage() {
           </div>
           </div>
 
-          {/* Bottom row: scroll cue + location */}
-          <div className="mt-10 lg:mt-8 flex items-end justify-between border-t border-white/10 pt-5 lg:pt-4 text-[11px] uppercase tracking-widest text-white/55">
+          {/* Bottom row: scroll cue */}
+          <div className="mt-10 lg:mt-8 flex items-end justify-start border-t border-white/10 pt-5 lg:pt-4 text-[11px] uppercase tracking-widest text-white/55">
             <a
               href="#cijfers"
               className="inline-flex items-center gap-2 font-bold hover:text-white/85"
@@ -128,10 +114,6 @@ export default function LandingPage() {
               <span>{t("mk_scroll")}</span>
               <ChevronDown size={14} className="animate-bounce" />
             </a>
-            <span className="hidden sm:inline-flex items-center gap-1.5 font-semibold">
-              <MapPin size={12} />
-              Schiekade 800, Rotterdam
-            </span>
           </div>
         </div>
       </section>
@@ -141,7 +123,6 @@ export default function LandingPage() {
       <StatsStrip />
       <AboutSection />
       <ServicesSection />
-      <ProcessSection />
       <ContactSection />
       <MarketingFooter />
     </main>

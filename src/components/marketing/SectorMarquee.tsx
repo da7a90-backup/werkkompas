@@ -2,17 +2,14 @@
 
 import { useT } from "@/lib/i18n";
 
+// The werkkompasbv.nl hero body names only these four sectors plus the catch-all
+// "alle branches". No invented additions.
 const SECTORS = [
   "Beveiliging",
   "Zorg",
   "Transport",
   "Logistiek",
-  "Evenementen",
-  "Bouw",
-  "Horeca",
-  "Retail",
-  "Industrie",
-  "Schoonmaak",
+  "Alle branches",
 ];
 
 /**

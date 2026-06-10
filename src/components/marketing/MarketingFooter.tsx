@@ -4,17 +4,20 @@ import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { useT } from "@/lib/i18n";
 
+/**
+ * Footer — mirrors werkkompasbv.nl footer:
+ *   nav: Home / Over Ons / Contacteer Ons / Juridische Kennisgeving / Privacybeleid
+ *   copyright: "©Auteursrecht. Alle rechten voorbehouden."
+ *   contact: email + phone (no postal address; site doesn't show one)
+ */
 export function MarketingFooter() {
   const { t } = useT();
   return (
     <footer className="relative bg-navy-900 text-white/75">
       <div className="container-app py-14 lg:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Logo height={48} variant="light" />
-            <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
-              {t("partner")}
-            </p>
           </div>
 
           <div>
@@ -22,11 +25,11 @@ export function MarketingFooter() {
               {t("mk_foot_quicklinks")}
             </div>
             <ul className="mt-4 space-y-2.5 text-sm">
+              <li><a href="#welkom" className="hover:text-white">Home</a></li>
               <li><a href="#over-ons" className="hover:text-white">{t("mk_nav_about")}</a></li>
-              <li><a href="#diensten" className="hover:text-white">{t("mk_nav_services")}</a></li>
               <li><a href="#contact" className="hover:text-white">{t("mk_nav_contact")}</a></li>
-              <li><Link href="/login/admin" className="hover:text-white">{t("admin_badge")}</Link></li>
-              <li><Link href="/login/employee" className="hover:text-white">{t("emp_badge")}</Link></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-white">{t("mk_foot_legal_notice")}</a></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-white">{t("mk_foot_privacy")}</a></li>
             </ul>
           </div>
 
@@ -51,18 +54,6 @@ export function MarketingFooter() {
                   {t("mk_contact_phone_value")}
                 </a>
               </li>
-              <li className="text-white/55">{t("mk_contact_office_value")}</li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-gold-400">
-              {t("mk_foot_legal")}
-            </div>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-white">{t("mk_foot_legal_notice")}</a></li>
-              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-white">{t("mk_foot_privacy")}</a></li>
-              <li><a href="#" onClick={(e) => e.preventDefault()} className="hover:text-white">{t("mk_foot_terms")}</a></li>
             </ul>
           </div>
         </div>

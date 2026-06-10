@@ -2,6 +2,11 @@
 
 import { useT } from "@/lib/i18n";
 
+/**
+ * Stats strip — mirrors the three numbers shown on werkkompasbv.nl exactly:
+ *   7 · Jaren ervaring · 100+ · Tevreden klanten · 150 · Gecertificeerde medewerkers
+ * No invented headline / eyebrow.
+ */
 export function StatsStrip() {
   const { t } = useT();
   const items = [
@@ -13,20 +18,10 @@ export function StatsStrip() {
   return (
     <section
       id="cijfers"
-      className="relative bg-canvas py-16 lg:py-24"
+      className="relative bg-canvas py-16 lg:py-20"
     >
       <div className="container-app">
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-navy-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-navy-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold-400" />
-            {t("mk_stats_eyebrow")}
-          </div>
-          <h2 className="mt-4 font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tightest text-navy-900 text-balance">
-            {t("mk_stats_title")}
-          </h2>
-        </div>
-
-        <div className="mt-10 lg:mt-14 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-navy-700/10 overflow-hidden rounded-3xl border border-line bg-white shadow-card">
+        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-navy-700/10 overflow-hidden rounded-3xl border border-line bg-white shadow-card">
           {items.map((it, i) => (
             <div
               key={i}

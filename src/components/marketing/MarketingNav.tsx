@@ -35,7 +35,6 @@ export function MarketingNav() {
           {[
             { href: "#over-ons", label: t("mk_nav_about") },
             { href: "#diensten", label: t("mk_nav_services") },
-            { href: "#aanpak", label: t("mk_process_eyebrow") },
             { href: "#contact", label: t("mk_nav_contact") },
           ].map((it) => (
             <a

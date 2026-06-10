@@ -483,7 +483,7 @@ const nl: Dict = {
     "Onze expertise omvat ook crisisondersteuning en veiligheidsdiensten, waarbij wij veilige en betrouwbare oplossingen bieden met gecertificeerd personeel, zoals zorgprofessionals en beveiligers.",
   mk_about_body_3:
     "Kies voor Werkkompas B.V. voor maatwerkoplossingen die perfect aansluiten op uw specifieke behoeften en zorgen voor een betrouwbare samenwerking.",
-  mk_about_cta: "Maak kennis met ons team",
+  mk_about_cta: "Neem contact met ons op",
   mk_about_pillar_1: "Branchekennis",
   mk_about_pillar_2: "Snel inzetbaar",
   mk_about_pillar_3: "Gecertificeerd",
@@ -513,7 +513,7 @@ const nl: Dict = {
   mk_contact_office_label: "Kantoor",
   mk_contact_office_value: "Schiekade 800, Rotterdam",
   mk_contact_email_value: "contact@werkkompasbv.nl",
-  mk_contact_phone_value: "+31 6 12 73 24 38",
+  mk_contact_phone_value: "+316 12 73 24 38",
   mk_contact_name_field: "Naam",
   mk_contact_name_ph: "Voor- en achternaam",
   mk_contact_email_field: "E-mailadres",
@@ -524,7 +524,7 @@ const nl: Dict = {
   mk_contact_message_ph: "Vertel ons over je vraag of opdracht…",
   mk_contact_consent:
     "Ik ga akkoord dat deze gegevens worden opgeslagen en verwerkt met het doel contact op te nemen. Ik kan mijn toestemming op elk moment intrekken.",
-  mk_contact_send: "Verstuur bericht",
+  mk_contact_send: "Stuur",
   mk_contact_success:
     "Bedankt! Je bericht is verzonden. We nemen snel contact met je op.",
   mk_contact_required: "* verplichte velden",
@@ -535,7 +535,7 @@ const nl: Dict = {
   mk_foot_privacy: "Privacybeleid",
   mk_foot_terms: "Algemene voorwaarden",
   mk_foot_contact_heading: "Contact",
-  mk_foot_copyright: "© 2026 Werkkompas B.V. — Alle rechten voorbehouden.",
+  mk_foot_copyright: "©Auteursrecht. Alle rechten voorbehouden.",
 
   // Hero (werkkompasbv.nl copy)
   mk_hero_welcome: "Welkom bij Werkkompas B.V.",
@@ -831,7 +831,7 @@ const en: Dict = {
   adm_msgs_count_plural: "{n} messages",
   adm_msgs_count_singular: "{n} message",
   adm_unread_count: "{n} unread",
-  adm_send_message: "Send message",
+  adm_send_message: "Submit",
 
   adm_messages_title: "Messages",
   adm_messages_desc: "Direct contact with employees",
@@ -1004,7 +1004,7 @@ const en: Dict = {
     "Our expertise also covers crisis support and security services, where we deliver safe and reliable solutions with certified staff — including healthcare professionals and security officers.",
   mk_about_body_3:
     "Choose Werkkompas B.V. for tailored solutions that fit your specific needs and build a reliable partnership.",
-  mk_about_cta: "Meet the team",
+  mk_about_cta: "Get in touch",
   mk_about_pillar_1: "Sector know-how",
   mk_about_pillar_2: "Fast deployment",
   mk_about_pillar_3: "Certified",
@@ -1031,7 +1031,7 @@ const en: Dict = {
   mk_contact_office_label: "Office",
   mk_contact_office_value: "Schiekade 800, Rotterdam",
   mk_contact_email_value: "contact@werkkompasbv.nl",
-  mk_contact_phone_value: "+31 6 12 73 24 38",
+  mk_contact_phone_value: "+316 12 73 24 38",
   mk_contact_name_field: "Name",
   mk_contact_name_ph: "First and last name",
   mk_contact_email_field: "Email address",
@@ -1042,7 +1042,7 @@ const en: Dict = {
   mk_contact_message_ph: "Tell us about your question or assignment…",
   mk_contact_consent:
     "I agree that these details are stored and processed in order to be contacted. I can withdraw my consent at any time.",
-  mk_contact_send: "Send message",
+  mk_contact_send: "Submit",
   mk_contact_success: "Thanks! Your message has been sent. We'll be in touch shortly.",
   mk_contact_required: "* required fields",
 
@@ -1052,7 +1052,7 @@ const en: Dict = {
   mk_foot_privacy: "Privacy policy",
   mk_foot_terms: "Terms of service",
   mk_foot_contact_heading: "Contact",
-  mk_foot_copyright: "© 2026 Werkkompas B.V. — All rights reserved.",
+  mk_foot_copyright: "©Copyright. All rights reserved.",
 
   mk_hero_welcome: "Welcome to Werkkompas B.V.",
   mk_hero_tagline: "Your reliable partner in personnel and assignments",
@@ -1515,7 +1515,7 @@ const fr: Dict = {
     "Notre expertise couvre aussi le soutien de crise et les services de sécurité — solutions sûres et fiables avec du personnel certifié, professionnels de santé et agents inclus.",
   mk_about_body_3:
     "Choisissez Werkkompas B.V. pour des solutions sur mesure parfaitement adaptées à vos besoins et un partenariat fiable.",
-  mk_about_cta: "Rencontrez l'équipe",
+  mk_about_cta: "Nous contacter",
   mk_about_pillar_1: "Connaissance secteur",
   mk_about_pillar_2: "Déploiement rapide",
   mk_about_pillar_3: "Certifié",
@@ -1542,7 +1542,7 @@ const fr: Dict = {
   mk_contact_office_label: "Bureau",
   mk_contact_office_value: "Schiekade 800, Rotterdam",
   mk_contact_email_value: "contact@werkkompasbv.nl",
-  mk_contact_phone_value: "+31 6 12 73 24 38",
+  mk_contact_phone_value: "+316 12 73 24 38",
   mk_contact_name_field: "Nom",
   mk_contact_name_ph: "Prénom et nom",
   mk_contact_email_field: "Adresse e-mail",
@@ -1553,7 +1553,7 @@ const fr: Dict = {
   mk_contact_message_ph: "Parlez-nous de votre question ou mission…",
   mk_contact_consent:
     "J'accepte que ces données soient stockées et traitées dans le but d'être recontacté. Je peux retirer mon consentement à tout moment.",
-  mk_contact_send: "Envoyer le message",
+  mk_contact_send: "Envoyer",
   mk_contact_success: "Merci ! Votre message a bien été envoyé. Nous revenons rapidement vers vous.",
   mk_contact_required: "* champs obligatoires",
 
@@ -1563,7 +1563,7 @@ const fr: Dict = {
   mk_foot_privacy: "Politique de confidentialité",
   mk_foot_terms: "Conditions générales",
   mk_foot_contact_heading: "Contact",
-  mk_foot_copyright: "© 2026 Werkkompas B.V. — Tous droits réservés.",
+  mk_foot_copyright: "©Droits d’auteur. Tous droits réservés.",
 
   mk_hero_welcome: "Bienvenue chez Werkkompas B.V.",
   mk_hero_tagline: "Votre partenaire de confiance en personnel et missions",
@@ -1853,7 +1853,7 @@ const es: Dict = {
   adm_msgs_count_plural: "{n} mensajes",
   adm_msgs_count_singular: "{n} mensaje",
   adm_unread_count: "{n} sin leer",
-  adm_send_message: "Enviar mensaje",
+  adm_send_message: "Enviar",
 
   adm_messages_title: "Mensajes",
   adm_messages_desc: "Contacto directo con empleados",
@@ -2026,7 +2026,7 @@ const es: Dict = {
     "Nuestra experiencia incluye apoyo en crisis y servicios de seguridad: soluciones seguras y fiables con personal certificado — incluidos profesionales sanitarios y vigilantes.",
   mk_about_body_3:
     "Elige Werkkompas B.V. para soluciones a medida adaptadas a tus necesidades y una colaboración fiable.",
-  mk_about_cta: "Conoce al equipo",
+  mk_about_cta: "Contáctanos",
   mk_about_pillar_1: "Experiencia sectorial",
   mk_about_pillar_2: "Despliegue rápido",
   mk_about_pillar_3: "Certificado",
@@ -2053,7 +2053,7 @@ const es: Dict = {
   mk_contact_office_label: "Oficina",
   mk_contact_office_value: "Schiekade 800, Rotterdam",
   mk_contact_email_value: "contact@werkkompasbv.nl",
-  mk_contact_phone_value: "+31 6 12 73 24 38",
+  mk_contact_phone_value: "+316 12 73 24 38",
   mk_contact_name_field: "Nombre",
   mk_contact_name_ph: "Nombre y apellidos",
   mk_contact_email_field: "Correo electrónico",
@@ -2064,7 +2064,7 @@ const es: Dict = {
   mk_contact_message_ph: "Cuéntanos tu pregunta o encargo…",
   mk_contact_consent:
     "Acepto que estos datos se almacenen y procesen con el fin de ser contactado. Puedo retirar mi consentimiento en cualquier momento.",
-  mk_contact_send: "Enviar mensaje",
+  mk_contact_send: "Enviar",
   mk_contact_success: "¡Gracias! Hemos recibido tu mensaje. Te contactaremos pronto.",
   mk_contact_required: "* campos obligatorios",
 
@@ -2074,7 +2074,7 @@ const es: Dict = {
   mk_foot_privacy: "Política de privacidad",
   mk_foot_terms: "Términos de servicio",
   mk_foot_contact_heading: "Contacto",
-  mk_foot_copyright: "© 2026 Werkkompas B.V. — Todos los derechos reservados.",
+  mk_foot_copyright: "©Derechos de autor. Todos los derechos reservados.",
 
   mk_hero_welcome: "Bienvenido a Werkkompas B.V.",
   mk_hero_tagline: "Tu socio de confianza en personal y encargos",
