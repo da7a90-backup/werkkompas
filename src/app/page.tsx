@@ -1,42 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Briefcase,
   Calendar,
-  CheckCircle2,
   MessageCircle,
   ShieldCheck,
   Users,
-  X,
   Smartphone,
 } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
-import { Button } from "@/components/ui/Button";
 import { Avatar } from "@/components/ui/Avatar";
 import { useStore } from "@/lib/store";
 import { LanguageMenu } from "@/components/shared/LanguageMenu";
-import { useT, useLocalized } from "@/lib/i18n";
+import { useT } from "@/lib/i18n";
 
 export default function LandingPage() {
-  const router = useRouter();
-  const { employees, dispatch } = useStore();
-  const [pickerOpen, setPickerOpen] = useState(false);
+  const { employees } = useStore();
   const { t } = useT();
-  const { cert: localizeCert } = useLocalized();
-
-  const enterAsEmployee = (employeeId: string) => {
-    dispatch({ type: "SET_SESSION", payload: { role: "employee", employeeId } });
-    router.push("/employee");
-  };
-
-  const enterAsAdmin = () => {
-    dispatch({ type: "SET_SESSION", payload: { role: "admin", employeeId: null } });
-    router.push("/admin");
-  };
 
   return (
     <main className="min-h-screen bg-navy-700 text-white relative overflow-hidden">
@@ -118,8 +100,8 @@ export default function LandingPage() {
               <span className="h-px flex-1 bg-white/15" />
             </div>
 
-            <button
-              onClick={() => setPickerOpen(true)}
+            <Link
+              href="/login/employee"
               className="group relative overflow-hidden rounded-3xl bg-white p-6 text-left text-navy-900 shadow-elevated transition-all hover:scale-[1.01] active:scale-[0.99]"
             >
               <div className="flex items-start justify-between gap-4">
@@ -155,10 +137,10 @@ export default function LandingPage() {
                   {t("emp_pickHint", { n: employees.length })}
                 </span>
               </div>
-            </button>
+            </Link>
 
-            <button
-              onClick={enterAsAdmin}
+            <Link
+              href="/login/admin"
               className="group relative overflow-hidden rounded-3xl bg-gold-400 p-6 text-left text-navy-900 shadow-elevated transition-all hover:scale-[1.01] active:scale-[0.99]"
             >
               <div className="flex items-start justify-between gap-4">
@@ -200,7 +182,7 @@ export default function LandingPage() {
                   </div>
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -217,96 +199,6 @@ export default function LandingPage() {
           </div>
         </footer>
       </div>
-
-      {/* Employee picker sheet */}
-      {pickerOpen && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
-          <div
-            className="absolute inset-0 bg-navy-950/60 backdrop-blur-sm animate-fade-in"
-            onClick={() => setPickerOpen(false)}
-          />
-          <div className="relative mx-auto flex max-h-[88vh] w-full max-w-2xl flex-col rounded-t-3xl bg-white text-ink shadow-sheet animate-slide-up sm:rounded-3xl sm:m-4">
-            <div className="flex items-start justify-between gap-2 border-b border-line px-6 py-5">
-              <div>
-                <h2 className="font-display text-xl font-black tracking-tightest text-navy-900">
-                  {t("picker_title")}
-                </h2>
-                <p className="mt-1 text-sm text-ink/60">
-                  {t("picker_desc")}
-                </p>
-              </div>
-              <button
-                onClick={() => setPickerOpen(false)}
-                className="rounded-lg p-1.5 text-ink/60 hover:bg-canvas"
-                aria-label="Sluiten"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            <div className="flex-1 overflow-y-auto scroll-y p-3">
-              <ul className="grid gap-2 sm:grid-cols-2">
-                {employees.map((e) => (
-                  <li key={e.id}>
-                    <button
-                      onClick={() => enterAsEmployee(e.id)}
-                      className="group flex w-full items-center gap-3 rounded-2xl border border-line bg-white p-3 text-left transition-all hover:border-navy-700/30 hover:bg-canvas active:scale-[0.99]"
-                    >
-                      <Avatar
-                        initials={e.initials}
-                        color={e.avatarColor}
-                        size="md"
-                      />
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-1.5">
-                          <span className="truncate font-bold tracking-tight text-navy-900">
-                            {e.firstName} {e.lastName}
-                          </span>
-                          {e.status !== "actief" && (
-                            <span className="rounded-md bg-amber-100 px-1.5 py-0.5 text-[10px] font-bold text-amber-700">
-                              {t(`empstatus_${e.status}`).toLowerCase()}
-                            </span>
-                          )}
-                        </div>
-                        <div className="mt-0.5 truncate text-xs text-ink/55">
-                          {e.city} · {e.contractHoursPerWeek}{t("per_week_short")}
-                        </div>
-                        <div className="mt-1.5 flex flex-wrap gap-1">
-                          {e.certifications.slice(0, 2).map((c) => (
-                            <span
-                              key={c}
-                              className="rounded-md bg-navy-50 px-1.5 py-0.5 text-[10px] font-semibold text-navy-700"
-                            >
-                              {localizeCert(c)}
-                            </span>
-                          ))}
-                          {e.certifications.length > 2 && (
-                            <span className="text-[10px] font-semibold text-ink/50">
-                              +{e.certifications.length - 2}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <ArrowRight
-                        size={16}
-                        className="text-ink/40 transition-transform group-hover:translate-x-0.5 group-hover:text-navy-700"
-                      />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex items-center justify-between gap-3 border-t border-line bg-canvas/60 px-6 py-3 text-xs text-ink/60">
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 size={12} className="text-emerald-600" />
-                {t("localStored")}
-              </div>
-              <Button variant="ghost" size="sm" onClick={() => setPickerOpen(false)}>
-                {t("cancel")}
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
   );
 }
