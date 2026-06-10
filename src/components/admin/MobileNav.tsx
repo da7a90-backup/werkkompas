@@ -38,12 +38,7 @@ export function AdminMobileNav() {
         }}
       >
         <div className="flex h-14 items-center justify-between border-b border-line bg-white px-4">
-          <div className="flex items-center gap-2.5">
-            <Logo size={28} />
-            <span className="font-display text-base font-black tracking-tightest text-navy-900">
-              Werkkompas
-            </span>
-          </div>
+          <Logo height={32} />
           <div className="flex items-center gap-2">
             <LanguageMenu variant="light" />
             <button
@@ -67,12 +62,7 @@ export function AdminMobileNav() {
               className="flex items-center justify-between border-b border-line px-5 pb-4"
               style={{ paddingTop: "calc(env(safe-area-inset-top) + 1rem)" }}
             >
-              <div className="flex items-center gap-2">
-                <Logo size={28} />
-                <span className="font-display font-black tracking-tightest text-navy-900">
-                  Werkkompas
-                </span>
-              </div>
+              <Logo height={32} />
               <button
                 onClick={() => setOpen(false)}
                 className="rounded-lg p-1.5 text-ink/60 hover:bg-canvas"

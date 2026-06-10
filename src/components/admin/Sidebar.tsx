@@ -36,16 +36,11 @@ export function AdminSidebar() {
 
   return (
     <aside className="hidden lg:flex h-screen w-64 shrink-0 flex-col border-r border-line bg-white">
-      <div className="flex h-16 items-center gap-3 border-b border-line px-5">
-        <Logo size={32} />
-        <div className="flex flex-col leading-tight">
-          <span className="font-display text-[15px] font-black tracking-tightest text-navy-900">
-            Werkkompas
-          </span>
-          <span className="text-[10px] font-semibold uppercase tracking-widest text-ink/50">
-            {t("nav_console")}
-          </span>
-        </div>
+      <div className="flex h-16 items-center justify-between gap-3 border-b border-line px-5">
+        <Logo height={36} />
+        <span className="text-[10px] font-semibold uppercase tracking-widest text-ink/50 text-right">
+          {t("nav_console")}
+        </span>
       </div>
 
       <nav className="flex-1 overflow-y-auto p-3 scroll-y">

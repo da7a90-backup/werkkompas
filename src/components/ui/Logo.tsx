@@ -2,47 +2,39 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface Props {
-  size?: number;
+  /** Rendered height in px. Width auto-scales to the lockup aspect ratio. */
+  height?: number;
   className?: string;
   variant?: "light" | "dark";
-  showWordmark?: boolean;
 }
 
+const LOCKUP_W = 343;
+const LOCKUP_H = 117;
+const ASPECT = LOCKUP_W / LOCKUP_H;
+
 /**
- * Werkkompas brand mark — renders the real logo PNG asset.
- * - "dark"  → for light surfaces (navy ring + gold star).
- * - "light" → for dark surfaces (white ring + gold star).
+ * Werkkompas full brand lockup (compass + WERK KOMPAS BV + tagline).
+ * - "dark"  → for light surfaces (navy text + gold star).
+ * - "light" → for dark surfaces (white text + gold star).
  */
 export function Logo({
-  size = 32,
+  height = 32,
   className,
   variant = "dark",
-  showWordmark = false,
 }: Props) {
   const isLight = variant === "light";
-  const src = isLight ? "/werkkompas-mark-light.png" : "/werkkompas-mark.png";
+  const src = isLight ? "/werkkompas-lockup-light.png" : "/werkkompas-lockup.png";
+  const width = Math.round(height * ASPECT);
 
   return (
-    <div className={cn("inline-flex items-center gap-3", className)}>
-      <Image
-        src={src}
-        alt="Werkkompas"
-        width={size}
-        height={size}
-        priority={size >= 32}
-        className="shrink-0 block"
-        style={{ width: size, height: size }}
-      />
-      {showWordmark && (
-        <span
-          className={cn(
-            "font-display text-lg font-extrabold tracking-tightest",
-            isLight ? "text-white" : "text-navy-700"
-          )}
-        >
-          Werkkompas
-        </span>
-      )}
-    </div>
+    <Image
+      src={src}
+      alt="Werkkompas"
+      width={width}
+      height={height}
+      priority
+      className={cn("shrink-0 block w-auto", className)}
+      style={{ height, width: "auto" }}
+    />
   );
 }

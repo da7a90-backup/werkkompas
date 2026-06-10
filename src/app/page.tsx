@@ -59,7 +59,7 @@ export default function LandingPage() {
 
       <div className="relative">
         <header className="container-app flex items-center justify-between py-6">
-          <Logo size={36} showWordmark variant="light" />
+          <Logo height={44} variant="light" />
           <div className="flex items-center gap-2">
             <div className="hidden md:flex items-center gap-1.5 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-bold uppercase tracking-widest text-white/80 ring-1 ring-inset ring-white/15">
               <span className="h-1.5 w-1.5 rounded-full bg-gold-400 live-dot" />
@@ -206,8 +206,7 @@ export default function LandingPage() {
 
         <footer className="container-app flex flex-wrap items-center justify-between gap-3 border-t border-white/10 py-5 text-[11px] text-white/45">
           <div className="flex items-center gap-2">
-            <Logo size={20} />
-            <span className="font-semibold text-white/65">Werkkompas B.V.</span>
+            <Logo height={24} variant="light" />
             <span className="opacity-60">— {t("partner")}</span>
           </div>
           <div className="flex items-center gap-4">
